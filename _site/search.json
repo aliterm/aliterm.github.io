@@ -178,6 +178,17 @@
   
     {
 
+      "title"    : "Sharing File Melalui Samba Winbind Pada Linux",
+      "url"      : "/sharing-file-melalui-samba-winbind-pada-linux",
+      "category" : "",
+      "tags"     : "sharing, samba",
+      "date"     : "2014-02-12 07:00:00 +0700",
+      "discription" : ""
+
+    } ,
+  
+    {
+
       "title"    : "Memperbaiki Grub Yang Tertimpa Setelah Install Windows",
       "url"      : "/memperbaiki-grub-yg-tertimpa-setelah-install-windows",
       "category" : "",
@@ -205,6 +216,17 @@
       "category" : "",
       "tags"     : "gnu/linux, chroot",
       "date"     : "2013-10-01 04:50:54 +0700",
+      "discription" : ""
+
+    } ,
+  
+    {
+
+      "title"    : "Linux Dan Distro Linux",
+      "url"      : "/linux-dan-distro-linux",
+      "category" : "",
+      "tags"     : "linux, distro",
+      "date"     : "2013-01-03 07:00:00 +0700",
       "discription" : ""
 
     } 

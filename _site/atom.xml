@@ -4,7 +4,7 @@
  <title>RubyHolic</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2020-04-03T16:00:00+07:00</updated>
+ <updated>2020-04-03T17:58:02+07:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ali</name>
@@ -1026,6 +1026,21 @@ Pemasangan Driver VGA&lt;/p&gt;
  </entry>
  
  <entry>
+   <title>Sharing File Melalui Samba Winbind Pada Linux</title>
+   <link href="http://localhost:4000/sharing-file-melalui-samba-winbind-pada-linux"/>
+   <updated>2014-02-12T07:00:00+07:00</updated>
+   <id>http://localhost:4000/sharing-file-melalui-samba-winbind-pada-linux</id>
+   <content type="html">&lt;p&gt;Pada Artikel kali ini saya ingin membagikan sedikit pemanfaatan Samba pada Linux yang digunakan untuk membangun jaringan kombinasi sistem operasi Windows dengan Linux. Salah satu pemanfaatan Samba adalah Sharing File atau berbagi file antar komputer atau bahkan antar komputer dengan smartphone atau PC tablet.&lt;/p&gt;
+
+&lt;p&gt;Sedikit ulasan tentang Samba adalah program yang dapat menjembatani kompleksitas berbagai platform system operasi Linux (UNIX) dengan mesin Windows yang dijalankan dalam suatu jaringan komputer. Samba merupakan aplikasi dari UNIX dan Linux, yang dikenal dengan SMB(Service Message Block) protocol. Banyak sistem operasi seperti Windows dan OS/2 yang menggunakan SMB untuk menciptakan jaringan client/server. Protokol Samba memungkinkan server Linux/UNIX untuk berkomunikasi dengan mesin client yang mengunakan OS Windows dalam satu jaringan (Sumber: Kang Deden).&lt;/p&gt;
+
+&lt;p&gt;Kemudian Winbind itu adalah Name Service Switch (NSS) untuk memperbaiki nama dari Server NT. Singkat kata seperti Netbios di Windows, pernah kan Anda ping localhost Anda dengan nama komputer Anda pada jaringan di Windows? Lalu apa fungsinya? Fungsinya adalah menghemat waktu :D, maksudnya jika Anda di rumah menggunakan jaringan DHCP (Dynamic Host Configuration Protocol) pasti Anda akan merasa kesulitan untuk mengetahui IP masing-masing dari komputer yang terhubung dengan router Anda, karena otomatis IP akan berubah-rubah ketika Komputer dimatikan / dihidupkan kembali. Untuk mengatisipasi kendala tersebut kita tidak perlu mengetahui IP dari setiap komputer, cukup tahu nama komputer itu apa, lalu kita ping dengan computer name itu maka kita akan tau IP nya. Seperti halnya juga domain, netbios juga sama.&lt;/p&gt;
+
+&lt;p&gt;Contoh ping localhost pada laptop saya:&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
    <title>Memperbaiki Grub Yang Tertimpa Setelah Install Windows</title>
    <link href="http://localhost:4000/memperbaiki-grub-yg-tertimpa-setelah-install-windows"/>
    <updated>2014-01-17T04:50:54+07:00</updated>
@@ -1180,6 +1195,33 @@ Pemasangan Driver VGA&lt;/p&gt;
 
 &lt;p&gt;Semoga bermanfaat 😉&lt;/p&gt;
 
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Linux Dan Distro Linux</title>
+   <link href="http://localhost:4000/linux-dan-distro-linux"/>
+   <updated>2013-01-03T07:00:00+07:00</updated>
+   <id>http://localhost:4000/linux-dan-distro-linux</id>
+   <content type="html">&lt;p&gt;Seperti sudah banyak tentang artikel yang membahas masalah Linux ataupun Distro Linux, tapi apa salahnya saya menjelaskan kembali tentang hal itu hitung-hitung untuk menambah referensi lumayankan bisa jadi bahan referensi tugas sekolah atau kuliah&lt;/p&gt;
+
+&lt;p&gt;Sebelum memasuki apa yang dimaksud Distro Linux ada baiknya kita melangkah mengetahui dahulu apa itu Linux-nya, karena kalau dari awal saja kita sudah tidak tau apa itu Linux maka akan sulit memahai apa itu Distro Linux.&lt;/p&gt;
+
+&lt;h2 id=&quot;pengertian-linux&quot;&gt;Pengertian Linux&lt;/h2&gt;
+
+&lt;p&gt;Linux adalah Unix clone sistem operasi yang berevolusi dari sebuah kernel yang ditulis oleh Linus Torvalds ketika beliau masih menjadi mahasiswa di Universitas Helsinki, dan dikembangkan dengan bantuan programer dan hackers dari seluruh dunia.Sistem operasi Unix dikembangkan dan diimplementasikan pada tahun 1960-an dan pertama kali dirilis pada 1970. Faktor ketersediaannya dan kompatibilitasnya yang tinggi menyebabkannya dapat digunakan, disalin dan dimodifikasi secara luas oleh institusi-institusi akademis dan pada pebisnis.
+Linux merupakan sistem operasi yang disebarkan secara luas dengan gratis di bawah lisensi GNU General Public License (GPL), yang berarti juga source code Linux tersedia. Itulah yang membuat Linux sangat spesial.&lt;/p&gt;
+
+&lt;p&gt;Sampai saat ini, Linux masih dikembangkan oleh kelompok-kelompok tanpa dibayar bisa juga mengandalkan sistem donasi, yang banyak dijumpai di Internet, tukar-menukar kode, melaporkan bug, dan membenahi segala masalah yang ada. Setiap orang yang tertarik dipersilahkan untuk bergabung dalam pengembangan Linux.&lt;/p&gt;
+
+&lt;h2 id=&quot;kelebihan-linux&quot;&gt;Kelebihan Linux&lt;/h2&gt;
+
+&lt;p&gt;Meskipun Linux bersifat Open Source dan juga Free, tidak berarti Linux itu jelek dan alakadarnya, justru Linux itu keren, dari sekian banyak kelebihan Linux ada salah satu yang menonjol yakni Linux itu 90% tidak ada virus dan aman.
+Saya katakan 90% mengapa? karena meskipun kebanyakan virus hanya untuk pengguna Windows, bukan berarti Linux tidak ada virusnya. Di Linux virus ada tapi hanya sedikit karena Linux bersifat open source dan selalu terjaga dari kode-kode jahat yang selalu dicek oleh komunitasnya, maka dari itu Linux 90% aman dari Virus.&lt;/p&gt;
+
+&lt;p&gt;Lalu perlukah Antivirus untuk Linux?, untuk menjawab ini antivirus di Linux itu hanyalah sebuah opsional mengapa? kita kembalikan lagi kepenggunanya, jika Anda menggunakan Linux untuk rumahan atau sekedar hobi sepertinya Antivirus di Linux tidak diperlukan, saya sendiri aja tidak menggunakan antivirus di Linux saya. Beda halnya jika Anda menggunakan Linux untuk keperluan Bisnis atau untuk korporasi, Antivirus sangat diperlukan untuk security, karena biar bagaimanapun tak ada keamanan yang 100% aman.&lt;/p&gt;
+
+&lt;p&gt;Kemudian Linux itu keren bisa menjalankan aplikasi Windows dengan bantuan Wine. Windows memang banyak penggunanya dikarenakan kemudahan sekaligus aplikasi dan game yang kerennya banyak. Seperti halnya dalam program pengola foto yakni Photoshop, Photoshop itu hanya dibuat untuk pengguna Windows dan Mac. Meskipun di Linux ada aplikasi yang sama dengan Photoshop yaitu GIMP tetapi Anda masih terbiasa menggunakan Photoshop, Anda tidak perlu khawatir karena di Linux masih bisa menjalankan Photoshop dengan bantuan Wine.l&lt;/p&gt;
 </content>
  </entry>
  

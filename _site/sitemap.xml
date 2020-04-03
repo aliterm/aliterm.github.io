@@ -2,11 +2,15 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>http://localhost:4000/about</loc>
-<lastmod>2020-04-03T16:00:00+07:00</lastmod>
+<lastmod>2020-04-03T17:58:02+07:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/search</loc>
-<lastmod>2020-04-03T16:00:00+07:00</lastmod>
+<lastmod>2020-04-03T17:58:02+07:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/linux-dan-distro-linux</loc>
+<lastmod>2013-01-03T07:00:00+07:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/reset-password-root-di-linux</loc>
@@ -19,6 +23,10 @@
 <url>
 <loc>http://localhost:4000/memperbaiki-grub-yg-tertimpa-setelah-install-windows</loc>
 <lastmod>2014-01-17T04:50:54+07:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/sharing-file-melalui-samba-winbind-pada-linux</loc>
+<lastmod>2014-02-12T07:00:00+07:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/install-arch-linux-gnome-systemd-boot-dualboot-dengan-windows-10-disertai-video</loc>
@@ -88,6 +96,12 @@
 <loc>http://localhost:4000/</loc>
 </url>
 <url>
+<loc>http://localhost:4000/tag/linux/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/tag/distro/</loc>
+</url>
+<url>
 <loc>http://localhost:4000/tag/gnu/linux/</loc>
 </url>
 <url>
@@ -106,7 +120,10 @@
 <loc>http://localhost:4000/tag/bootloader/</loc>
 </url>
 <url>
-<loc>http://localhost:4000/tag/linux/</loc>
+<loc>http://localhost:4000/tag/sharing/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/tag/samba/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/tag/archlinux/</loc>
