@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+ <title>RubyHolic</title>
+ <link href="http://localhost:4000/atom.xml" rel="self"/>
+ <link href="http://localhost:4000/"/>
+ <updated>2020-04-03T14:47:50+07:00</updated>
+ <id>http://localhost:4000</id>
+ <author>
+   <name>Ali</name>
+   <email>me@situsali.id</email>
+ </author>
+
+ 
+ <entry>
+   <title>Migrasi dari WP ke Jekyll</title>
+   <link href="http://localhost:4000/migrasi-dari-wp-ke-jekyll"/>
+   <updated>2020-04-03T14:47:00+07:00</updated>
+   <id>http://localhost:4000/migrasi-dari-wp-ke-jekyll</id>
+   <content type="html">&lt;p&gt;Situsali sedang dalam proses pemindahan dari WP menuju SSG. Beberapa artikel sedang dimigrasikan secara manual, dimulai dari artikel paling akhir hingga paling baru. Mohon maaf atas ketidaknyamanannya.&lt;/p&gt;
+</content>
+ </entry>
+ 
+
+</feed>

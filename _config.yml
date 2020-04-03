@@ -1,0 +1,60 @@
+site: RubyHolic
+url: #yoururl
+title: RubyHolic
+description: Ketika menjadi Ruby Developer
+twitter:
+  username: alisoftware
+  card: summary
+  creator: #yourusername
+author:
+  twitter: alisoftware
+  name: Ali
+  avatar:
+  email: me@situsali.id
+  url: www.situsali.id
+permalink: pretty
+
+baseurl: ""
+
+exclude:
+  - .jekyll-cache
+
+compress_html:
+  clippings: all
+  comments: ["<!-- ", " -->"]
+
+sass:
+  sass_dir:          _sass
+  style:            :compressed
+
+plugins:
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+collections:
+  pages:
+    output: true
+    permalink: /:name
+  posts:
+    output: true
+    permalink: /:slug
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
