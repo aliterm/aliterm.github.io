@@ -4,7 +4,7 @@
  <title>RubyHolic</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2020-04-03T14:47:50+07:00</updated>
+ <updated>2020-04-03T16:00:00+07:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ali</name>
@@ -18,6 +18,1168 @@
    <updated>2020-04-03T14:47:00+07:00</updated>
    <id>http://localhost:4000/migrasi-dari-wp-ke-jekyll</id>
    <content type="html">&lt;p&gt;Situsali sedang dalam proses pemindahan dari WP menuju SSG. Beberapa artikel sedang dimigrasikan secara manual, dimulai dari artikel paling akhir hingga paling baru. Mohon maaf atas ketidaknyamanannya.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Migrasi ke Jekyll</title>
+   <link href="http://localhost:4000/migrasi-ke-jekyll"/>
+   <updated>2020-04-03T09:13:31+07:00</updated>
+   <id>http://localhost:4000/migrasi-ke-jekyll</id>
+   <content type="html">&lt;p&gt;Sejak 1 Juli 2019, saya memutuskan untuk memindahkan platform &lt;a href=&quot;https://www.situsali.id&quot;&gt;situsali&lt;/a&gt; dari WordPress ke SSG (Static Site Generator), dengan memilih &lt;a href=&quot;https://gohugo.io&quot;&gt;hugo&lt;/a&gt; sebagai generatornya.&lt;/p&gt;
+
+&lt;h2 id=&quot;wacana-pindah-platform&quot;&gt;Wacana Pindah Platform&lt;/h2&gt;
+
+&lt;p&gt;Pemindahan platform &lt;a href=&quot;https://www.situsali.id&quot;&gt;situsali&lt;/a&gt; sebetulnya sudah saya wacanakan sejak tahun 2016 lalu. Kebetulan ditahun itu SSG memang sedang naik daun. Akan tetapi, wacana pemindahan dibatalkan, karena saya memiliki banyak pertimbangan seperti:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://www.situsali.id&quot;&gt;situsali&lt;/a&gt; sudah cukup berumur&lt;/strong&gt;. Ia dibangun sejak akhir tahun 2013, ditahun 2016 berarti sudah berumur 3 tahun. Jika platform dipindah maka akan perlu banyak effort salah satunya masalah SEO.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Karena static site tidak memiliki semacam&lt;/strong&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;search page&lt;/code&gt;. Meskipun bisa diakali, SSG tidaklah sama dengan dynamic site. Karena situs dinamis disimpan dalam database sehingga lebih mudah untuk ditemukan dan dapat diolah dari backend. Sedangkan static site, kita harus mengolahnya dengan bantuan &lt;code class=&quot;highlighter-rouge&quot;&gt;javascript&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Migrasi artikel&lt;/strong&gt;. Meskipun bisa saja kita gunakan import tool, akan tetapi yang namanya pindah platform pasti akan perlu dimodifikasi menyesuaikan platform tersebut.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Komentar Tool&lt;/strong&gt;. Situs akan lebih hidup dengan adanya komentar dari pembaca. Kalau di WordPress fitur ini sudah ada secara default, beda dengan Static Site. Kita perlu menyisipkan komentar pihak ketiga. Belum lagi, masalah kendala impor komentar.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Konsultasi kepada para senior&lt;/strong&gt;, mereka mengatakan bahwa &lt;strong&gt;“jangan dipindah, karena sayang blog sudah lama”&lt;/strong&gt;. Kata-kata tersebut, memang ada betulnya mungkin sama denga poin nomor satu.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;mencoba-jekyll&quot;&gt;Mencoba Jekyll&lt;/h2&gt;
+
+&lt;p&gt;Awalnya &lt;a href=&quot;https://www.situsali.id&quot;&gt;situsali&lt;/a&gt; sudah saya buatkan versi ssg nya di subdomain &lt;static.situsali.com&gt; dengan Jekyll. Oh iya, Jekyll ini merupakan SSG pertama yang saya kenal sejak tahun 2014an dan memang sudah pernah coba-coba di GitHub Pages.&lt;/static.situsali.com&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;sudah-menggunakan-hugo&quot;&gt;Sudah menggunakan Hugo&lt;/h2&gt;
+
+&lt;p&gt;Sebelum berpindah seperti biasa, saya melakukan uji coba. Saya buat semacam clone dari &lt;a href=&quot;https://www.situsali.id&quot;&gt;situsali&lt;/a&gt; di subdomain &lt;notes.situsali.com&gt;.&lt;/notes.situsali.com&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;pindah-ke-domain-dot-id&quot;&gt;Pindah ke Domain Dot Id&lt;/h2&gt;
+&lt;p&gt;Pertanggal 17 Juni 2019, &lt;a href=&quot;https://www.situsali.id&quot;&gt;situsali&lt;/a&gt; migrasi domain. Sebelumnya menggunakan domain &lt;code class=&quot;highlighter-rouge&quot;&gt;situsali.com&lt;/code&gt; kini menjadi &lt;code class=&quot;highlighter-rouge&quot;&gt;situsali.id&lt;/code&gt;. Pemindahan domain dilakukan berdasarkan atas &lt;code class=&quot;highlighter-rouge&quot;&gt;harga yang lebih murah&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Jadi awal mulanya, ketika saya melakukan renewal domain &lt;a href=&quot;https://pegelinux.id&quot;&gt;pegelinux.id&lt;/a&gt;, saya terkejut karena harga domain dot id hanya 107 ribu ditambah pph 10% menjadi 117 ribu rupiah. Sangat murah dibandingkan domain dot com saya yang seharga 208 ribu. Lumayan jadi hemat 91 ribu, dan ini setara dengan harga VPS &lt;a href=&quot;https://www.situsali.id&quot;&gt;situsali&lt;/a&gt; selama sebulan.&lt;/p&gt;
+
+&lt;p&gt;Saya belum tahu secara pasti bahwa domain id ini sedang promo atau harga 107 itu selamanya. Oleh karenanya, untuk mengantisipasi saya membeli domain langsung 3 tahun. Mumpung sedang murah 😅. Update pertanggal 18 Juli 2019, ternyata ini memang sedang promo.&lt;/p&gt;
+
+&lt;p&gt;Pemindahan domain inilah yang menjadikan cikal-bakal mengenai wacana penggantian platform, sembari ada komentar teman di blog yang menyarankan pindah platform.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/migrasi-ke-hugo-1.png&quot; alt=&quot;Saran Teman&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Saran teman, menambah yakin saya untuk segera pindah platform.&lt;/p&gt;
+
+&lt;p&gt;— Bersambung —&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Cara Memasang Ruby On Rails di Arch Linux Based</title>
+   <link href="http://localhost:4000/cara-memasang-ruby-on-rails-di-arch-linux-based"/>
+   <updated>2019-06-20T09:13:31+07:00</updated>
+   <id>http://localhost:4000/cara-memasang-ruby-on-rails-di-arch-linux-based</id>
+   <content type="html">&lt;p&gt;Kebetulan lagi memulai belajar Ruby on Rails (RoR) yakni suatu framework untuk membangun aplikasi web dengan bahasa pemrograman ruby.  Dan kebetulan pula, RoR sudah terpasang lama, dikomputer saya yang menggunakan Arch Linux.&lt;/p&gt;
+
+&lt;p&gt;Agar tidak lupa, berikut ini  cara saya memasangan Ruby on Rails di Arch Linux based, artinya ini dapat pula digunakan pada distro turunan Arch Linux.&lt;/p&gt;
+
+&lt;h2 id=&quot;pasang-ruby-dan-nodejs&quot;&gt;Pasang Ruby dan NodeJS&lt;/h2&gt;
+
+&lt;p&gt;Sebelum memasang pertama-tama, pastikan kalian sudah  memasang ruby dan nodejs jika belum, lakukan perintah berikut:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;pacman &lt;span class=&quot;nt&quot;&gt;-Sy&lt;/span&gt; ruby nodejs
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;pasang-ror-dari-gem&quot;&gt;Pasang RoR dari Gem&lt;/h2&gt;
+
+&lt;p&gt;Setelah ruby terpasang kita tinggal pasang RoR menggunakan paket manager milikruby yakni dengan gem. Berikut perintahnya:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;gem &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;rails
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;konfigurasi-gem&quot;&gt;Konfigurasi Gem&lt;/h2&gt;
+
+&lt;p&gt;Dikarenakan RoR dipasang dari paket manager bukan milik Arch Linux, maka kita tidak bisa langsung memanggilnya.  Kita perlu mengeset $PATH yang berisi binary hasil dari gem agar dapat dieksekusi dari Terminal.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ GEM_PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;gem environment | &lt;span class=&quot;nb&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;USER INSTALLATION DIRECTORY&quot;&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;awk&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'{print $5}'&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;export PATH=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$GEM_PATH&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/bin&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; ~/.bashrc &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; ~/.bashrc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;penjelasan-perintah&quot;&gt;Penjelasan Perintah&lt;/h3&gt;
+
+&lt;p&gt;Btw, perintah &lt;code class=&quot;highlighter-rouge&quot;&gt;GEM_PATH&lt;/code&gt; bla bla bla di atas maksudnya apa? Baiklah akan saya jelaskan sedikit. Jadi, perintah tersebut berfungsi untuk mencari path dari hasil gem dengan mudah. Singkatnya, ketika kalian ketik gem environment maka akan menghasilkan keluaran seperti ini:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;RubyGems Environment:
+  - RUBYGEMS VERSION: 3.0.3
+  - RUBY VERSION: 2.6.3 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;2019-04-16 patchlevel 62&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;x86_64-linux]
+  - INSTALLATION DIRECTORY: /usr/lib/ruby/gems/2.6.0
+  - USER INSTALLATION DIRECTORY: /home/ali/.gem/ruby/2.6.0
+  - RUBY EXECUTABLE: /usr/bin/ruby
+  - GIT EXECUTABLE: /usr/bin/git
+  - EXECUTABLE DIRECTORY: /usr/bin
+  - SPEC CACHE DIRECTORY: /home/ali/.gem/specs
+  - SYSTEM CONFIGURATION DIRECTORY: /etc
+  - RUBYGEMS PLATFORMS:
+    - ruby
+    - x86_64-linux
+  - GEM PATHS:
+     - /usr/lib/ruby/gems/2.6.0
+     - /home/ali/.gem/ruby/2.6.0
+  - GEM CONFIGURATION:
+     - :update_sources &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;
+     - :verbose &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;
+     - :backtrace &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;
+     - :bulk_threshold &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; 1000
+     - &lt;span class=&quot;s2&quot;&gt;&quot;gem&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;--user-install&quot;&lt;/span&gt;
+  - REMOTE SOURCES:
+     - https://rubygems.org/
+  - SHELL PATH:
+     - /usr/local/bin
+     - /usr/local/sbin
+     - /usr/bin
+     - /usr/lib/jvm/default/bin
+     - /usr/bin/site_perl
+     - /usr/bin/vendor_perl
+     - /usr/bin/core_perl
+     - /home/ali/.gem/ruby/2.6.0/bin
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Nah, untuk mempermudah langsung saja kita &lt;code class=&quot;highlighter-rouge&quot;&gt;grep&lt;/code&gt;.  Jadi &lt;code class=&quot;highlighter-rouge&quot;&gt;gem environment | grep &quot;USER INSTALLATION DIRECTORY&quot;&lt;/code&gt; hasilnya akan seperti ini:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- USER INSTALLATION DIRECTORY: /home/ali/.gem/ruby/2.6.0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Jika dilihat dari hasil di kita bisa potong agar menghasilkan keluaran &lt;code class=&quot;highlighter-rouge&quot;&gt;/home/ali/.gem/ruby/2.6.0&lt;/code&gt; dengan &lt;code class=&quot;highlighter-rouge&quot;&gt;awk&lt;/code&gt; yang berada dalam posisi ke-5 jadi perintahnya seperti ini &lt;code class=&quot;highlighter-rouge&quot;&gt;gem environment | grep &quot;USER INSTALLATION DIRECTORY&quot; | awk '{print $5}'&lt;/code&gt; .Kemudian baru deh, saya masukan ke dalam variabel &lt;code class=&quot;highlighter-rouge&quot;&gt;GEM_PATH=$(bla bla bla)&lt;/code&gt;. Dan yang terakhir ditulis diberkas &lt;code class=&quot;highlighter-rouge&quot;&gt;.bashrc&lt;/code&gt; agar bisa langsung dipergunakan.
+Eksekusi RoR&lt;/p&gt;
+
+&lt;p&gt;Rails sudah terpasang dan sudah dapat digunakan, kita tinggal jalankan dengan membuat projek baru.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;rails new NAMA_ROR_KALIAN
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Pada saat proses pemasangan akan ada pertanyaan memasukan kata sandi seperti berikut:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Fetching &lt;span class=&quot;nb&quot;&gt;source &lt;/span&gt;index from http://rubygems.org/
+
+
+Your user account isn&lt;span class=&quot;s1&quot;&gt;'t allowed to install to the system Rubygems.
+You can cancel this installation and run:
+
+    bundle install --path vendor/bundle
+
+    to install the gems into ./vendor/bundle/, or you can enter your password
+    and install the bundled gems to Rubygems using sudo.
+
+    Password:
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Abaikan saja, Cukup tekan &lt;code class=&quot;highlighter-rouge&quot;&gt;ENTER&lt;/code&gt;. &lt;strong&gt;Ingat! Jangan pernah menggunakan&lt;/strong&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo&lt;/code&gt; &lt;strong&gt;untuk paket manager yang bukan milik distro. Karena dikhawatirkan ada skrip jahat yang tidak kita ketahui dari luar, dan bukan tanggung jawab distro&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Yang hanya perlu kita lakukan adalah seperti yang tertulis dari warning message di atas. Yakni menjalankan perintah &lt;code class=&quot;highlighter-rouge&quot;&gt;bundle install --path vendor/bundle&lt;/code&gt;. Jadi perintah lengkapnya seperti berikut:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;nama_ror_kamu
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;bundle &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--path&lt;/span&gt; vendor/bundle
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Selesai, jalankan aplikasi RoR kalian dengan perintah berikut:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;rails server
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Langkah selanjutnya? Kita sama-sama belajar RoR, dan insya Allah akan saya tulis pula dasar-dasarnya. Semoga bermanfaat ya kawan-kawan sekalian :D.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Membatasi Waktu Sinkronisasi Metadata Di Dnf Fedora</title>
+   <link href="http://localhost:4000/membatasi-waktu-sinkronisasi-metadata-di-dnf-fedora"/>
+   <updated>2019-04-21T21:51:01+07:00</updated>
+   <id>http://localhost:4000/membatasi-waktu-sinkronisasi-metadata-di-dnf-fedora</id>
+   <content type="html">&lt;p&gt;Fedora setiap kali kita ingin melakukan pemasangan ataupun pencarian paket aplikasi dari &lt;code class=&quot;highlighter-rouge&quot;&gt;dnf&lt;/code&gt;,  ia akan selalu melakukan sinkronisasi metadata. Perlu diketahui bahwa metadata dibutuhkan &lt;code class=&quot;highlighter-rouge&quot;&gt;dnf&lt;/code&gt; sebagai indeksi berkas pada repositori. Simpelnya, metadata itu pangkalan data dari &lt;code class=&quot;highlighter-rouge&quot;&gt;dnf&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;pokok-masalah&quot;&gt;Pokok Masalah&lt;/h2&gt;
+
+&lt;p&gt;Sinkronisasi metadata sangatlah penting, karena pada saat kita ingin melakukan pemasangan paket, &lt;code class=&quot;highlighter-rouge&quot;&gt;dnf&lt;/code&gt; akan mengecek paket tersebut pada metadata di lokal dan memastikan semuanya sama dengan peladen repositori. Jika tidak, tentu kita akan mendapati galat 404 karena berkas tidak ada dalam peladen.&lt;/p&gt;
+
+&lt;p&gt;Fedora secara asali menerapkan sinkronisasi metadata selama 48 jam atau 2 hari. Jadi jika sudah lebih dari dua hari, kalian ingin memasang aplikasi, maka &lt;code class=&quot;highlighter-rouge&quot;&gt;dnf&lt;/code&gt; akan memperbaharui metadata-nya.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/membatasi-waktu-sinkronisasi-metadata-di-dnf-fedora-1.png&quot; alt=&quot;Contoh Pembaruan Metadata&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Gambar di atas hanya contoh pembaruan metadata. Kalau metadata berukuran kecil (filesize), mungkin tidak akan menjadi masalah. Lainhal jika berukuran hingga puluhan megabyte akan sangat menjengkelkan, terlebih lagi bagi para pengguna internet berkecepatan rendah dan dibatasi kuota. Ini akan sangat menyiksa. Kebetulan juga saya salah satu yang merasakan itu 🤣.&lt;/p&gt;
+
+&lt;h2 id=&quot;solusi&quot;&gt;Solusi&lt;/h2&gt;
+
+&lt;p&gt;Saya ada sedikit solusi yang mungkin akan membantu kalian. Yakni dengan kita membatasi &lt;code class=&quot;highlighter-rouge&quot;&gt;metadata_expire&lt;/code&gt;. Kalian bisa memperpanjang masa kadaluarsanya sebanyak satu minggu atau satu bulan. Tapi saya saya lebih baik jangan diberi kadaluarsa, mengapa? Karena kita bisa memperbarui metadata secara manual dari &lt;code class=&quot;highlighter-rouge&quot;&gt;dnf&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Berikut ini solusinya. Pertama-tama kalian sunting berkas &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/dnf/dnf.conf&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;vim /etc/dnf/dnf.conf
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Lalu tambahkan &lt;code class=&quot;highlighter-rouge&quot;&gt;metadata_expire=never&lt;/code&gt; dan &lt;code class=&quot;highlighter-rouge&quot;&gt;metadata_timer_sync=0&lt;/code&gt; dibaris paling bawah seperti gambar berikut:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/membatasi-waktu-sinkronisasi-metadata-di-dnf-fedora-2.png&quot; alt=&quot;Metadata&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Kalau kalian ingin menganti menjadi 6 hari misalnya. Tinggal ganti kata &lt;code class=&quot;highlighter-rouge&quot;&gt;never&lt;/code&gt; dengan &lt;code class=&quot;highlighter-rouge&quot;&gt;6h&lt;/code&gt; atau &lt;code class=&quot;highlighter-rouge&quot;&gt;86400&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Kemudian pastikan semua repositori tidak ter-override dengan masing-masing konfigurasinya.  Kita bisa cek dengan cara berikut:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-r&lt;/span&gt; /etc/yum.repos.d/ &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'metadata_expire'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/membatasi-waktu-sinkronisasi-metadata-di-dnf-fedora-3.png&quot; alt=&quot;Metadata&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Kalian lihat beberapa repositori ada yang tertimpa dengan konfigurasinya. Ada yang kadaluarsa 6 jam ada juga yang 7 hari. Oleh karena itu kita harus merubahnya menjadi &lt;code class=&quot;highlighter-rouge&quot;&gt;expired&lt;/code&gt;. Sebelum diubah cek dulu repositori mana saja yang dipakai, dengan perintah berikut:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-Ril&lt;/span&gt; /etc/yum.repos.d/ &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'enabled=1'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/membatasi-waktu-sinkronisasi-metadata-di-dnf-fedora-4.png&quot; alt=&quot;Metadata&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Nah, itu dia repostori yang aktif. Sekarang tinggal kita ubah satu persatu berkas seperti di atas.&lt;/p&gt;
+
+&lt;p&gt;Langkah terakhir ketika kita ingin memasang aplikasi pastikan ditambah parameter &lt;code class=&quot;highlighter-rouge&quot;&gt;--cacheonly&lt;/code&gt;. Contoh&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;dnf &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;vlc &lt;span class=&quot;nt&quot;&gt;--cacheonly&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Semoga bermanfaat 😉&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Yang Saya Lakukan Setelah Memasang Fedora 29</title>
+   <link href="http://localhost:4000/yang-saya-lakukan-setelah-memasang-fedora-29"/>
+   <updated>2019-04-20T22:20:30+07:00</updated>
+   <id>http://localhost:4000/yang-saya-lakukan-setelah-memasang-fedora-29</id>
+   <content type="html">&lt;h2 id=&quot;sekata-kata&quot;&gt;Sekata-Kata&lt;/h2&gt;
+
+&lt;p&gt;Alasan saya memilih Fedora adalah stabilitas dan adanya deltarpm beserta fastestmirror. Lebih-lebih ke deltarpm inilah terpenting bagi saya. Karena saat ini, saya tidak lagi menggunakan layanan internet kabel, melainkan dengan modem atau tethering dari smartphone. Akan sangat berasa manfaatnya menggunakan deltarpm ini, sebagai penghemat kuota.&lt;/p&gt;
+
+&lt;p&gt;Kemudian stabiltas, meskipun Fedora merupakan distro ujicoba dari RHEL (RedHat Enterprise Linux) dan setiap 9 bulan berganti versi. Kestabilan Fedora saya akui lebih dibandingkan dengan distro semisal Ubuntu. Oh, iya Ubuntu ini memiliki varian LTS (Long Term Service), yang memungkinkan didukung hingga 5 tahun. Namun menurut pandangan saya, dibandingkan dengan Ubuntu, Fedora ini masih lebih stabil. Ingat ini hanya pendapat pribadi saya! Bisa jadi berbeda dengan kalian. Akan lebih baik, silahkan kalian bandingkan sendiri.&lt;/p&gt;
+
+&lt;p&gt;Diartikel ini, saya tidak akan menjelaskan bagaimana proses pemasangan Fedora. Mungkin jika sempat, akan saya buatkan tutorialnya. Karena pemasangan Fedora saya akui agak sedikit tricky dibandingan dengan distro lainnya semisal Ubuntu dan Manjaro. Terutama bagian pemilihan storage. Untuk sementara kalian bisa mencari tutorialnya di blog lain atau dari Youtube.
+Setelah Pasang&lt;/p&gt;
+
+&lt;p&gt;Agar tidak panjang mengenai alasan saya memasang Fedora, dan tidak keluar dari topik judul. Langsung saja kita mulai.&lt;/p&gt;
+
+&lt;h2 id=&quot;setelah-pasang-fedora&quot;&gt;Setelah Pasang Fedora&lt;/h2&gt;
+
+&lt;p&gt;Yang saya lakukan setelah memasang Fedora adalah sebagai berikut:&lt;/p&gt;
+
+&lt;h3 id=&quot;mengaktifkan-fastest-mirror-dan-delta-rpm&quot;&gt;Mengaktifkan Fastest Mirror dan Delta RPM&lt;/h3&gt;
+
+&lt;p&gt;Fedora 29 secara asali tidak mengaktifkan fastestmirror dan deltarpm jika kita ingin memanfaatkan fitur tersebut, perlu diaktifkan terlebih dahulu. Caranya adalah sebagai berikut:&lt;/p&gt;
+
+&lt;p&gt;Buka berkas di &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/dnf/dnf.conf&lt;/code&gt; :&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;vim /etc/dnf/dnf.conf
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Kemudian tambahkan:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;fastestmirror&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;true
+&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;deltarpm&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/yang-saya-lakukan-setelah-memasang-fedora-29-1.png&quot; alt=&quot;fastest mirror&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;pasang-rpm-fusion&quot;&gt;Pasang RPM Fusion&lt;/h3&gt;
+
+&lt;p&gt;Fedora sangat ketat dalam hal repositori di dalamnya. Secara asali, aplikasi non-free tidak disertakan dalam repositori. Jadi jangan terkejut jika kalian ingin memasangan ffmpeg atau kebutuhan multimedia lainnya, di Fedora tidak ada. Karena itulah, kita membutuhkan rpmfusion yang mana ia menangani paket aplikasi non-free. Berikut ini cara pemasangannya:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;dnf &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;rpm &lt;span class=&quot;nt&quot;&gt;-E&lt;/span&gt; %fedora&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;.noarch.rpm
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;dnf &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;rpm &lt;span class=&quot;nt&quot;&gt;-E&lt;/span&gt; %fedora&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;.noarch.rpm
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;memasang-google-chrome&quot;&gt;Memasang Google Chrome&lt;/h3&gt;
+
+&lt;p&gt;Ini sebetulnya opsional saja. Karena beberapa orang ada yang lebih nyaman dengan berselancar dengan Google Chrome dibandingkan Firefox.&lt;/p&gt;
+
+&lt;p&gt;Google Chrome ada dua cara memasangnya, pertama kita bisa langsung pasang dari rpm dari situs resminya, dan yang kedua kita tambahkan repositorinya Google Chrome. Saya lebih menyarankan cara kedua, karena akan lebih mudah pada saat kita memasang tidak perlu lagi mencari dependensinya. Juga pada saat meng-update-nya. Tinggal lakukan melalui dnf.&lt;/p&gt;
+
+&lt;p&gt;Menambahkan repositori Google Chrome:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;dnf &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;fedora-workstation-repositories
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;dnf config-manager &lt;span class=&quot;nt&quot;&gt;--set-enabled&lt;/span&gt; google-chrome
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Memasang Google Chrome:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;dnf &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;google-chrome-stable
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;memasang-kebutuhan-multimedia&quot;&gt;Memasang Kebutuhan Multimedia&lt;/h3&gt;
+
+&lt;p&gt;Kalian tentu masih ada yang menyimpan musik mp3? Jika kalian ingin memutar media di Fedora, terlebih dahulu paket multimedianya dipasang. Jangan lupa, untuk melakukan tahapan ini, kalian harus memasang rpmfusion pada langkah ke-2 di atas.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;dnf &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+gstreamer-plugins-base &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+gstreamer1-plugins-base &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+gstreamer-plugins-bad &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+gstreamer-plugins-ugly &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+gstreamer1-plugins-ugly &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+gstreamer-plugins-good-extras &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+gstreamer1-plugins-good &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+gstreamer1-plugins-good-extras &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+gstreamer1-plugins-bad-freeworld &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;penutup&quot;&gt;Penutup&lt;/h2&gt;
+
+&lt;p&gt;Kita sampai di sini dulu. Untuk aplikasi lainnya semisal kebutuhan gambar dan memanipulasi foto. Misalnya Gimp dan Inkscape. Kalian bisa pasang sendiri aplikasi tersebut melalui dnf.&lt;/p&gt;
+
+&lt;p&gt;Semoga tulisan ini bermanfaat.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Murottal 30 Juz Abdullah Al Matrud</title>
+   <link href="http://localhost:4000/murottal-30-juz-abdullah-al-matrud"/>
+   <updated>2019-02-23T21:18:07+07:00</updated>
+   <id>http://localhost:4000/murottal-30-juz-abdullah-al-matrud</id>
+   <content type="html">&lt;p&gt;Sewaktu SMP, saya sering sekali mendegarkan lantunan murottal dibacakan oleh syekh Abdullah al-Matrud, yang disiarkan di beberapa mushola atau mesjid dekat rumah. Biasanya murottal tersebut disiarkan pada waktu ba’da Ashar sekitar 15 atau 10 menit menjelang waktu masuknya Magrib.&lt;/p&gt;
+
+&lt;p&gt;Menurut saya, bacaan murottal dari syekh Abdullah al-Matrud ini cukup merdu lagi menyenjuk hati ketika didengarkan. Bahkan karena sering mendengar, Alhamdulillah membuat saya hafal beberapa bagian surat, tentu dengan lantunan nadanya.&lt;/p&gt;
+
+&lt;p&gt;Saat ini, di mushola atau masjid sudah jarang sekali menyiarkan murottal yang dibacakan oleh syekh Abdullah al-Matrud ini. Tetapi, penyiaran bukan tidak ada sama sekali, melainkan hanya qori’ atau pembacanya diganti yang lebih populer serta lebih merdu seperti syekh Mishary Rashid Alafasy.&lt;/p&gt;
+
+&lt;p&gt;Karena sekarang syekh Abdullah al-Matrud kurang populer, maka agak susah dicari murottalnya, beruntung saya mendapat salah satu situs yang masih menyediakannya secara lengkap, dan sesegera saya candangkan di VPS sebagai arsip. Dengan ini, kalian juga bisa mengunduhnya.&lt;/p&gt;
+
+&lt;p&gt;Silahkan kalian unduh tautan di bawah ini. Mohon maaf untuk penamaan berkasnya menggunakan nomor surat, tidak berdasarkan nama surat dalam al-Quran.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://drive.google.com/drive/folders/1UAWY65q5U_8YY1XfVk8-iqTwkOX6Dzoj?usp=sharing&quot;&gt;Unduh Murottal al-Matrud&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Semoga bermafaat serta berkah.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Memperbaiki Grub GNU/Linux Dengan Chroot</title>
+   <link href="http://localhost:4000/memperbaiki-grub-gnu-linux-dengan-chroot"/>
+   <updated>2019-02-09T21:25:00+07:00</updated>
+   <id>http://localhost:4000/memperbaiki-grub-gnu-linux-dengan-chroot</id>
+   <content type="html">&lt;h2 id=&quot;introduksi&quot;&gt;Introduksi&lt;/h2&gt;
+
+&lt;p&gt;Pernah kah kalian mengalami GNU/Linux tiba-tiba tidak bisa masuk pada saat di-restart?&lt;/p&gt;
+
+&lt;p&gt;Atau tiba-tiba &lt;code class=&quot;highlighter-rouge&quot;&gt;grub&lt;/code&gt; hilang setelah kita memasang Windows untuk dual-boot?&lt;/p&gt;
+
+&lt;p&gt;Jika iya, kalian tidak sendirian. Saya pun pernah mengalami hal demikian. Karena pengalaman itulah yang membuat saya ingin menuliskannya, siapa tahu ini menjadi berguna bagi kalian pembaca setia situsali.&lt;/p&gt;
+
+&lt;h2 id=&quot;persyaratan&quot;&gt;Persyaratan&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Memiliki USB Bootable GNU/Linux. Jika kalian belum punya sebaiknya buat dulu, caranya ada di blog ini, kalian bisa cari.&lt;/li&gt;
+  &lt;li&gt;Koneksi Internet. Ini dibutuhkan pada saat pemasangan beberapa aplikasi menggunakan manajer paket.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;masuk-gnulinux&quot;&gt;Masuk GNU/Linux&lt;/h2&gt;
+
+&lt;p&gt;Boot komputer kalian menggunakan USB Bootable Live GNU/Linux. Jika kalian sudah masuk. Lakukan pengecekan di mana kalian memasang GNU/Linux, ada dua cara yakni:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;lsbk
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;atau&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;fdisk &lt;span class=&quot;nt&quot;&gt;-l&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Saya asumsikan kalian memasang GNU/Linux di &lt;code class=&quot;highlighter-rouge&quot;&gt;/dev/sda1&lt;/code&gt;. Jika kalian pengguna UEFI kalian perlu tahu juga letak &lt;code class=&quot;highlighter-rouge&quot;&gt;/boot&lt;/code&gt; atau &lt;code class=&quot;highlighter-rouge&quot;&gt;/boot/efi&lt;/code&gt;, saya asumsikan lagi terletak di &lt;code class=&quot;highlighter-rouge&quot;&gt;/dev/sda2&lt;/code&gt; .&lt;/p&gt;
+
+&lt;p&gt;Kita sudah tahu letak &lt;code class=&quot;highlighter-rouge&quot;&gt;/&lt;/code&gt; dan &lt;code class=&quot;highlighter-rouge&quot;&gt;/boot/efi&lt;/code&gt; selanjutnya tinggal kita mount dengan perintah berikut:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo mkdir&lt;/span&gt; /media/recovery/
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;mount /dev/sda1 /media/recovery/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Khusus pengguna UEFI kalian wajib melakukan ini:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;mount /dev/sda2 /media/recovery/boot/efi
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;pemasangan-grub&quot;&gt;Pemasangan Grub&lt;/h2&gt;
+
+&lt;p&gt;Setelah semua sudah di-mount langsung saja kita pasang &lt;code class=&quot;highlighter-rouge&quot;&gt;grub&lt;/code&gt;-nya.&lt;/p&gt;
+
+&lt;h3 id=&quot;khusus-penggunan-bios&quot;&gt;Khusus penggunan BIOS&lt;/h3&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;grub-install /dev/sda &lt;span class=&quot;nt&quot;&gt;--root-directory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/media/recovery/ &lt;span class=&quot;nt&quot;&gt;--target&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;i386-pc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;khusus-pengguna-uefi&quot;&gt;Khusus pengguna UEFI&lt;/h3&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;grub-install &lt;span class=&quot;nt&quot;&gt;--target&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;x86_64-efi &lt;span class=&quot;nt&quot;&gt;--efi-directory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/media/recovery/boot/efi/ &lt;span class=&quot;nt&quot;&gt;--bootloader-id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;GRUB
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;chroot&quot;&gt;Chroot&lt;/h2&gt;
+
+&lt;p&gt;Cukup panjang juga ya caranya? Kalian jangan menyerah dulu ya.. 😀 karena kita baru saja memulai.&lt;/p&gt;
+
+&lt;p&gt;Untuk masuk &lt;code class=&quot;highlighter-rouge&quot;&gt;chroot&lt;/code&gt; kita perlu me- &lt;code class=&quot;highlighter-rouge&quot;&gt;mount&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; /media/recovery
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;mount &lt;span class=&quot;nt&quot;&gt;-t&lt;/span&gt; proc proc proc/
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;mount &lt;span class=&quot;nt&quot;&gt;-t&lt;/span&gt; sysfs sys sys/
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;mount &lt;span class=&quot;nt&quot;&gt;-o&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;bind&lt;/span&gt; /dev dev/
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;mount &lt;span class=&quot;nt&quot;&gt;-t&lt;/span&gt; devpts pts dev/pts/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Kemudian langsung kita &lt;code class=&quot;highlighter-rouge&quot;&gt;chroot&lt;/code&gt; dengan perintah di bawah ini:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo chroot&lt;/span&gt; /media/recovery /bin/bash
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Kalau sudah masuk &lt;code class=&quot;highlighter-rouge&quot;&gt;chroot&lt;/code&gt;, kalian sudah seperti masuk dalam GNU/Linux yang berada dalam media penyimpanan / diska kalian. Tinggal langkah selanjutnya kita update &lt;code class=&quot;highlighter-rouge&quot;&gt;grub&lt;/code&gt; config dengan perintah:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# grub-mkconfig -o /boot/grub/grub.cfg&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Sip mudah kan? Mudah banget…😎&lt;/p&gt;
+
+&lt;h2 id=&quot;penutup&quot;&gt;Penutup&lt;/h2&gt;
+
+&lt;p&gt;Sebenarnya jika kita sudah masuk &lt;code class=&quot;highlighter-rouge&quot;&gt;chroot&lt;/code&gt; kita bisa melakukan apapun, seperti pemasangan aplikasi atau bahkan merubah kata sandi root tapi karena topik bahasan kita hanya pada perbaikan &lt;code class=&quot;highlighter-rouge&quot;&gt;grub&lt;/code&gt; maka kita sampai di sini dulu ya. Nanti kita lanjut lagi dalam studi kasus lainnya menggunakan &lt;code class=&quot;highlighter-rouge&quot;&gt;chroot&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Semoga bermanfaat 😉&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Mudah Migrasi Wordpress</title>
+   <link href="http://localhost:4000/mudah-migrasi-wordpress"/>
+   <updated>2019-02-06T21:33:52+07:00</updated>
+   <id>http://localhost:4000/mudah-migrasi-wordpress</id>
+   <content type="html">&lt;h2 id=&quot;prakata&quot;&gt;Prakata&lt;/h2&gt;
+
+&lt;p&gt;Setelah kalian selesai membangun situs dengan WordPress di &lt;code class=&quot;highlighter-rouge&quot;&gt;localhost&lt;/code&gt;, dan berencana untuk menaikannya ke peladen (server). Nah, kalian harus mempersiapkan diri untuk menyunting beberapa kode sumber dan pangkalan datanya. Jika tidak, situs kalian tidak akan bisa berjalan seperti halnya di &lt;code class=&quot;highlighter-rouge&quot;&gt;localhost&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;persyaratan&quot;&gt;Persyaratan&lt;/h2&gt;
+
+&lt;p&gt;Sebelum memasuki tahap praktek, di sini saya asumsikan kalian menggunakan VPS atau Dedicated Server. Jika kalian menggunakan Shared Hosting yang kalian lakukan adalah:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Buka File Manager dan buka berkas &lt;code class=&quot;highlighter-rouge&quot;&gt;wp-config.php&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Buka Database Server atau &lt;code class=&quot;highlighter-rouge&quot;&gt;phpMyAdmin&lt;/code&gt; jika ada.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Nah bagi kalian penggunaa non-shared hosting, kalian bisa langsung buka berkas &lt;code class=&quot;highlighter-rouge&quot;&gt;wp-config.php&lt;/code&gt; menggunakan &lt;code class=&quot;highlighter-rouge&quot;&gt;vim&lt;/code&gt; atau &lt;code class=&quot;highlighter-rouge&quot;&gt;nano&lt;/code&gt;. Perintahnya sebagai berikut:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; /direktori/wp/kalian/
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;vim wp-config.php
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Lihat dan catat &lt;code class=&quot;highlighter-rouge&quot;&gt;DB_USER&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;DB_PASSWORD&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;DB_HOST&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;DB_PASSWORD&lt;/code&gt; dan yang paling penting &lt;code class=&quot;highlighter-rouge&quot;&gt;$table_prefix&lt;/code&gt; :&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;define&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'DB_NAME'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'database_name_here'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;define&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'DB_USER'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'username_here'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;define&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'DB_PASSWORD'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'password_here'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;define&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'DB_HOST'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'localhost'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$table_prefix&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'wp_'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;caranya&quot;&gt;Caranya&lt;/h2&gt;
+
+&lt;p&gt;Setelah melihat berkas &lt;code class=&quot;highlighter-rouge&quot;&gt;wp-config.php&lt;/code&gt; langkah selanjutnya yakni kalian masuk ke &lt;code class=&quot;highlighter-rouge&quot;&gt;mariadb&lt;/code&gt; dengan cara:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;mysql &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; root
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Kemudian kita ubah (replace) tautan lama yang di &lt;code class=&quot;highlighter-rouge&quot;&gt;localhost&lt;/code&gt; kalian dengan tautan baru.&lt;/p&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;UPDATE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;wp_posts&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;SET&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;post_content&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;REPLACE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;post_content&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'http://link.lama'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'http://link.baru'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;UPDATE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;wp_posts&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;SET&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;guid&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;REPLACE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;guid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'http://link.lama'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'http://link.baru'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Perhatian contoh skrip di atas saya menggunakan &lt;code class=&quot;highlighter-rouge&quot;&gt;wp_posts&lt;/code&gt; karena sebelumnya &lt;code class=&quot;highlighter-rouge&quot;&gt;$table_prefix&lt;/code&gt; nya adalah &lt;code class=&quot;highlighter-rouge&quot;&gt;wp_&lt;/code&gt;. Pastikan disesuaikan dengan &lt;code class=&quot;highlighter-rouge&quot;&gt;$table_prefix&lt;/code&gt; kalian, jika tidak skrip di atas akan terjadi galat.&lt;/p&gt;
+
+&lt;p&gt;Kemudian yang terakhir kita ubah juga tautan &lt;code class=&quot;highlighter-rouge&quot;&gt;options&lt;/code&gt; -nya yang mana tautan ini yang pertama kali dibaca oleh WP saat memuat di awal, jadi pastikan wajib diubah!&lt;/p&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;UPDATE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;wp_options&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;SET&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;option_value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;REPLACE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;option_value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'http://link.lama'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'http://link.baru'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;option_value&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;LIKE&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'%http://link.lama%'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Nah, selesai sudah. Langkah terakhir kita cek apakah situs kita sudah daring atau belum?&lt;/p&gt;
+
+&lt;p&gt;Oh iya, sebetulnya saya sudah membahas tentang migrasi WP di artikel sebelumnya kalian bisa baca khusus pengguna shared hosting: &lt;a href=&quot;http://www.situsali.id/cara-migrasi-wordpress-dari-localhost-ke-hosting-cpanel-disertai-video/&quot;&gt;http://www.situsali.id/cara-migrasi-wordpress-dari-localhost-ke-hosting-cpanel-disertai-video/&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Semoga bermanfaat 😉&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Teks Arab Sholawat Dustur</title>
+   <link href="http://localhost:4000/teks-arab-sholawat-dustur"/>
+   <updated>2019-02-04T21:42:35+07:00</updated>
+   <id>http://localhost:4000/teks-arab-sholawat-dustur</id>
+   <content type="html">&lt;p&gt;Ini pertama kalinya saya menulis konten islami di situsali. Saya rasa tidak mengapa, karena bagian dari tujuan adanya situsali salah satunya adalah sebagai catatan pribadi.&lt;/p&gt;
+
+&lt;p&gt;Untuk permulaan saya ingin berbagi tulisan mengenai bacaan sholawat dustur.&lt;/p&gt;
+
+&lt;p&gt;Seperti yang kita ketahui bahwa sholawat dustur biasa dibacakan pada saat permulaan taklim atau dibacakan oleh muadzin ketika khatib duduk di antara dua khotbah jumat.&lt;/p&gt;
+
+&lt;p&gt;Adapun bacaanya sebagai berikut:&lt;/p&gt;
+
+&lt;div class=&quot;arabic&quot;&gt;
+&lt;p dir=&quot;rtl&quot; align=&quot;center&quot;&gt;&lt;span style=&quot;font-family:KFGQPCUthmanTahaNaskh;&quot;&gt;&lt;span style=&quot;font-size:xx-large;&quot;&gt;&lt;span lang=&quot;ar-SA&quot;&gt;&lt;b&gt;صَلَوَاتُ الدُّسْتُوْرِ&lt;/b&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p dir=&quot;rtl&quot; align=&quot;center&quot;&gt;&lt;span style=&quot;font-family:KFGQPCUthmanTahaNaskh;&quot;&gt;&lt;span style=&quot;font-size:xx-large;&quot;&gt;&lt;span lang=&quot;ar-SA&quot;&gt;بِـسْمِ اللّــٰـهِ الرَّحْمٰــنِ الرَّحِيْمِ&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p dir=&quot;rtl&quot; align=&quot;right&quot;&gt;&lt;span style=&quot;font-family:KFGQPCUthmanTahaNaskh;&quot;&gt;&lt;span style=&quot;font-size:xx-large;&quot;&gt;&lt;span lang=&quot;ar-SA&quot;&gt;اَللّٰـهُمَّ صَلِّ وَسَلِّمْ وَزِدْ وََ اَدِمْ وَ أَنْــعِمْ وَتَـفَضَّلْ وَبَـارِكْ ، بِـجَلَالِكَ وَكَمـَـالِكَ عَـلـٰى زَيْـنِ عِبَادِكَ وَأَشْرَفِ عُبَّادِكَ ، أَسْعَدِ الْعَرَبِ وَالْـعَـجَمِ وَإمَامِ الطَّـيْــبَةَ وَالْحَرَمِ ، وَتَـرْجُـمَانِ بِـلِسَانِ الْـقِدَمِ وَمَـنْـبَعِ الْـعِلْـمِ وَالْحِلْمِ وَالْحِكْـمـَةِ وَالْحِكَمِ ، أَبِى اْلـقَاسِمِ ، سَيِّــدِنَـا وَحَـبِـيْـبِـنَا وَشَـفِـيْـعِـنَا وَمَوْلَانَـا مُحَمَّدٍ ، صَلَّى اللهُ عَلَيْهِ&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p dir=&quot;rtl&quot; align=&quot;right&quot;&gt;&lt;span style=&quot;font-family:KFGQPCUthmanTahaNaskh;&quot;&gt;&lt;span style=&quot;font-size:xx-large;&quot;&gt;&lt;span lang=&quot;ar-SA&quot;&gt;وَ سَلَّامَ ، &lt;span style=&quot;color:#ba131a;&quot;&gt;زِدْهُ شَرَفًـا يَـارَبِّ&lt;/span&gt; &lt;span style=&quot;color:#000000;&quot;&gt;﴿&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;font-size:xx-large;&quot;&gt;&lt;span style=&quot;color:#ba131a;&quot;&gt;&lt;span style=&quot;font-family:NotoNaskhArabic;&quot;&gt;&lt;span style=&quot;font-size:medium;&quot;&gt;X&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;font-family:KFGQPCUthmanTahaNaskh;&quot;&gt;&lt;span style=&quot;font-size:xx-large;&quot;&gt;&lt;span lang=&quot;ar-SA&quot;&gt;&lt;span style=&quot;color:#ba131a;&quot;&gt;٣&lt;/span&gt;﴾ وَكَــرَمًا وَتَـعْظِـيْمًا وَرِفْـعَـةً وَمَهَابَـةً وَبِـرًّا ، وَ رَضِيَ اللّـهُ تَـبَارَكَ وَتَـعَالـٰى عَـنْ ذَوِى الْـفَخْـرِ الْعَـلِـىِّ وَالْـقَـدْرِ الْجَـلِـىِّ ، سَادَاتِــنَا وَأَئِـمَّــتِــنَا وَ مَـوَالِـــيْــنَا ، أَبِى بَكْرٍ وَعُمَرٍ وَعُـثْـمَانٍ وَعَـلِـيٍّ ، اَلْـحَسَنِ ثُمَّ الـْحُسَيْنِ ،&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p dir=&quot;rtl&quot; align=&quot;right&quot;&gt;&lt;span style=&quot;font-family:KFGQPCUthmanTahaNaskh;&quot;&gt;&lt;span style=&quot;font-size:xx-large;&quot;&gt;&lt;span lang=&quot;ar-SA&quot;&gt;وَعَـنْ بَـقِــيَّـةِ الصَّحَابَـةِ وَقَـرَابَـةِ رَسُوْلِ اللّــهِ ، &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p dir=&quot;rtl&quot; align=&quot;right&quot;&gt;&lt;span style=&quot;font-family:KFGQPCUthmanTahaNaskh;&quot;&gt;&lt;span style=&quot;font-size:xx-large;&quot;&gt;&lt;span lang=&quot;ar-SA&quot;&gt;صَلَّى اللّـهُ عَلَيْهِمْ أَجْمَعِــيْنَ ، وَالْحَمْدُ لِلّــهِ رَبِّ الْعَالَـمِـيْنَ ﴿﴾&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Kalian juga bisa mengunduh versi PDF nya:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.situsali.id/files/sholawat-dustur.pdf&quot;&gt;https://www.situsali.id/files/sholawat-dustur.pdf&lt;/a&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Meluringkan Situs Dengan Wget</title>
+   <link href="http://localhost:4000/meluringkan-situs-dengan-wget"/>
+   <updated>2019-02-03T21:27:17+07:00</updated>
+   <id>http://localhost:4000/meluringkan-situs-dengan-wget</id>
+   <content type="html">&lt;h2 id=&quot;prakata&quot;&gt;Prakata&lt;/h2&gt;
+
+&lt;p&gt;Terkadang kita perlu menyalin suatu situs yang kita anggap penting dan bermanfaat dengan meluringkannya, guna untuk membacanya kembali semisal kita berada dalam situasi yang mana kita tidak dapat terkoneksi dengan internet.&lt;/p&gt;
+
+&lt;h2 id=&quot;persiapan&quot;&gt;Persiapan&lt;/h2&gt;
+
+&lt;p&gt;Yakni menggunakan aplikasi wget. Jika kalian pengguna GNU/Linux, berbahagialah karena wget pada beberapa distro tertentu sudah menjadi asali. Kalaupun belum ada, kita bisa memasanganya dengan manajer paket sesuai dengan distro yang kita pakai.&lt;/p&gt;
+
+&lt;p&gt;Contoh untuk penguna Ubuntu beserta derivatifnya:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;wget
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Lalu bagaimana jika bukan pengguna GNU/Linux mungkin kalian perlu mengompilnya yang bisa kalian ambil kode sumbernya dari situs resmi GNU:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.gnu.org/software/wget/&quot;&gt;https://www.gnu.org/software/wget/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Oh iya, kalau kalian pengguna macOS kalian juga bisa pasang wget dengan brew.
+Cara Menggunakan&lt;/p&gt;
+
+&lt;p&gt;Sedangkan perintah untuk meluringkan situs adalah sebagai berikut:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;wget &lt;span class=&quot;nt&quot;&gt;--mirror&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--convert-links&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--adjust-extension&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--page-requisites&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--no-parent&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--no-check-certificate&lt;/span&gt; https://contoh.com/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Atau kita bisa gunakan perintah yang lebih singkat:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;wget &lt;span class=&quot;nt&quot;&gt;-mkEpnp&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--no-check-certificate&lt;/span&gt; https://contoh.com/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Mudahkan? Semoga bermanfaat.😁&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Cek Kapasitas Penyimpanan Di GNU/Linux</title>
+   <link href="http://localhost:4000/cek-kapasitas-penyimpanan-di-gnu-linux"/>
+   <updated>2019-02-02T21:31:03+07:00</updated>
+   <id>http://localhost:4000/cek-kapasitas-penyimpanan-di-gnu-linux</id>
+   <content type="html">&lt;h2 id=&quot;latar-belakang&quot;&gt;Latar Belakang&lt;/h2&gt;
+
+&lt;p&gt;Teman saya pernah bertanya bahwa VPS yang dia kelola ketika ingin diperbarui gagal dan terjadi galat. Ketika saya lihat, informasi galat yang tertera ternyata dia kehabisan ruang penyimpanan.&lt;/p&gt;
+
+&lt;h2 id=&quot;kronologi&quot;&gt;Kronologi&lt;/h2&gt;
+
+&lt;p&gt;Kemudian saya coba periksa dengan perintah:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;df&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-h&lt;/span&gt; /
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Kalau dari tebakan saya ini pasti ada hubungannya dengan log yang menyebabkan kapasitas media penyimpanannya menjadi penuh.
+Solusi&lt;/p&gt;
+
+&lt;p&gt;Daripada tebak-tebak buah manggis, lebih baik saya pastikan dengan mengecek seluruh direktori menggunakan perintah berikut:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;su
+&lt;span class=&quot;c&quot;&gt;# du --max-depth=1 --human-readable / | sort --human-numeric-sort&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Ternyata tebakan saya salah, justru yang penuh direktori home hahaha 🤣 setelah ditanya, sebelumnya dia sering coba-coba aplikasi dan mengunduh beberapa video yang menyebabkan ruang penyimpanannya menjadi penuh.&lt;/p&gt;
+
+&lt;p&gt;Dari kejadian tersebut, saya mencoba memerikasa lebih dalam pada direktori home dengan perintah berikut:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;du&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-d1&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-h&lt;/span&gt; ~ | &lt;span class=&quot;nb&quot;&gt;sort&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-h&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Nah ketahuan deh direktori mana yang bikin penuh.
+Kesimpulan&lt;/p&gt;
+
+&lt;p&gt;Peristiwa di atas bisa kita simpulkan bahwa, jika ruang penyimpanan penuh, kita dapat melakukan pengecekan seluruh direktori di root dengan perintah:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;su
+&lt;span class=&quot;c&quot;&gt;# du --max-depth=1 --human-readable / | sort --human-numeric-sort&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Atau salah satu direktori yang kalian curigai:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;du&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-d1&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-h&lt;/span&gt; /direktori/kalian/ | &lt;span class=&quot;nb&quot;&gt;sort&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-h&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Semoga bermanfaat.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Cara Memindahkan Multi Kategori Menjadi Satu Di Wordpress</title>
+   <link href="http://localhost:4000/cara-memindahkan-multi-kategori-menjadi-satu-di-wordpress"/>
+   <updated>2019-01-31T21:34:26+07:00</updated>
+   <id>http://localhost:4000/cara-memindahkan-multi-kategori-menjadi-satu-di-wordpress</id>
+   <content type="html">&lt;h2 id=&quot;prakata&quot;&gt;Prakata&lt;/h2&gt;
+
+&lt;p&gt;Seperti yang sudah pernah saya sampaikan bahwa &lt;a href=&quot;https://www.situsali.id&quot;&gt;situsali&lt;/a&gt; telah melakukan &lt;a href=&quot;/pemangkasan-kategori/&quot;&gt;pemangkasan kategori&lt;/a&gt; hingga menjadi dua kategori.&lt;/p&gt;
+
+&lt;p&gt;Tulisan kali ini, saya ingin membagikan tentang bagaimana cara saya memindahkan berbagai kategori dari postingan di WordPress, menjadi satu kategori.&lt;/p&gt;
+
+&lt;h2 id=&quot;persyaratan&quot;&gt;Persyaratan&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Pastikan kalian menggunakan WordPress.org bukan WordPress.com.&lt;/li&gt;
+  &lt;li&gt;Pastikan kalian sudah mencandangkan pangkalan data WordPress kalian. Tujuannya adalah jika terjadi kesalahan kita bisa mengembalikan data semula.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;pemasangan&quot;&gt;Pemasangan&lt;/h2&gt;
+
+&lt;p&gt;Untuk memindahkan semua kategori menjadi satu kategori. Kita perlu memasang plugin bernama &lt;code class=&quot;highlighter-rouge&quot;&gt;Bulk Move&lt;/code&gt;. Kalian bisa dapatkan dengan cara masuk ke &lt;code class=&quot;highlighter-rouge&quot;&gt;Plugin&lt;/code&gt; lalu pilih &lt;code class=&quot;highlighter-rouge&quot;&gt;New&lt;/code&gt; dan ketik &lt;code class=&quot;highlighter-rouge&quot;&gt;Bulk Move&lt;/code&gt; .&lt;/p&gt;
+
+&lt;p&gt;Atau kalian juga bisa langsung mengelik tautan di bawah ini:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://wordpress.org/plugins/bulk-move/&quot;&gt;https://wordpress.org/plugins/bulk-move/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;cara-menggunakan&quot;&gt;Cara Menggunakan&lt;/h2&gt;
+
+&lt;p&gt;Adapun cara menggunakannya cukup mudah. Berikut ini langkah-langkahnya:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Pertama-tama, kalian buat dulu kategori yang nantinya kalian ingin pindahkan.
+Contohnya: Saya ingin memindahkan kategori GNU/Linux menjadi Tech. Yang saya lakukan adalah saya buat dulu kategori Tech nya.&lt;/li&gt;
+  &lt;li&gt;Setelah membuat kategori baru, selanjutnya kita masuk ke Tools &amp;gt; Bulk Move dan pilih Bulk Move By Category. Nah, dari situ kita tinggal pilih saja kategori mana yang mau dipindahkan. Berikut tangkapan layar nya bisa kalian lihat di bawah:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/cara-memindahkan-multi-kategori-menjadi-satu-di-wordpress-1.png&quot; alt=&quot;cara pakai&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Cukup mudah bukan? Itulah yang saya lakukan dalam pemindahan kategori. Selanjutnya kategori yang telah kita pindahkan tersebut bisa kita hapus. Dari contoh di atas kategori GNU/Linux bisa saya hapus karena sudah dipindahkan dikategori Tech.&lt;/p&gt;
+
+&lt;p&gt;Semoga bermanfaat 😀&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Pemangkasan Kategori</title>
+   <link href="http://localhost:4000/pemangkasan-kategori"/>
+   <updated>2019-01-30T22:48:28+07:00</updated>
+   <id>http://localhost:4000/pemangkasan-kategori</id>
+   <content type="html">&lt;p&gt;Penyebab lainya dari mogoknya saya menulis adalah adanya pemangkasan kategori yang semula situsali memiliki beberapa kategori kini dipangkas menjadi dua kategori yakni kategori Teknologi dan Non-Teknologi. Mengapa?&lt;/p&gt;
+
+&lt;p&gt;Kalau dibagi menjadi dua kategori, dapat mempermudah dalam pemilihan kategori. Selebihnya kita bisa beri tanda (tag) jika dalam artikel tersebut membahas sesuatu yang lebih spesifik. Contohnya begini:&lt;/p&gt;
+
+&lt;p&gt;Saya ingin menulis mengenai ulasan Ubuntu versi terbaru, berjudul “Ulasan singkat Ubuntu Versiku”. Dari judul tersebut kita bisa langsung memasukan ke dalam kategori teknologi karena yang dibahas merupakan bagian dari GNU/Linux kita bisa memberikan tanda (tag) GNU/Linux, agar lebih spesifik kita juga bisa menambahkan tag Ubuntu dan Ulasan. Nah, pemberian tag inilah berfungsi menjadi sub-kategori dari tulisan.&lt;/p&gt;
+
+&lt;p&gt;Oh iya, sebisa mungkin tag yang diberikan tidak lebih dari 3 tags, mengapa? Hemat saya, memberi banyak tag malah menjadi kurang sedap dipandang.&lt;/p&gt;
+
+&lt;p&gt;Nah, sudah jelas bukan mengapa saya memangkas kategori yang ada?&lt;/p&gt;
+
+&lt;p&gt;Adapun untuk kategori tenologi ini dipergunakan untuk membahas segala hal yang tentu berkaitan dengan teknologi, perangkat lunak maupun perangkat keras beserta pemerograman.&lt;/p&gt;
+
+&lt;p&gt;Sedangkan kategori non-teknologi kebalikannya. Kategori ini saya pergunakan untuk menulis acak, seperti catatan harian, ulasan makanan atau mungkin pada saat berjalan-jalan. Yang pada intinya tidak terkait teknologi.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Mogok Menulis</title>
+   <link href="http://localhost:4000/mogok-menulis"/>
+   <updated>2019-01-30T21:50:17+07:00</updated>
+   <id>http://localhost:4000/mogok-menulis</id>
+   <content type="html">&lt;p&gt;Meski sebenarnya saya bukanlah orang yang super sibuk, sampai-sampai lama sekali tidak menyempatkan diri untuk menambah artikel atau sekadar menyunting tulisan-lama yang saltik. Dengan demikian, muncul anggapan bahwa situsali seakan seperti tidak diurusi atau hampir mengalami mati-suri.&lt;/p&gt;
+
+&lt;p&gt;Perlu ditegaskan bahwa Situsali tidaklah mati suri, sampai saat ini ia masih terus diurusi dan artikelnya akan terus ditambah. Salah satu buktinya ialah saya masih memperpanjang ranah dan sewa VPS. Juga masih menjawab beberapa komentar para pengunjung.&lt;/p&gt;
+
+&lt;p&gt;Beberapa bulan terakhir, sejak awal November hingga sekarang, sejujurnya saya mengalami rasa suntuk menulis. Ide-ide untuk membuat tulisan-baru serasa sulit dikeluarkan dari benak pikiran. Padahal, beberapa draf judul sudah ditulis. Namun, ketika ingin melanjutkannya, ada saja kendala yang saya alami. Hingga akhirnya draf tersebut tertunda.&lt;/p&gt;
+
+&lt;p&gt;Lama menunda-nunda, menyebabkan pikiran berubah sampai akhirnya draf tulisan menjadi macet, dan sulit dilanjutkan. Yang terjadi, seperti yang kalian lihat yakni artikel terakhir di sini tertulis pada tanggal 2 November 2018 dan kini kita sudah memasuki akhir bulan Januari 2019. Hal ini berarti sudah 2 bulan saya menunda tulisan.&lt;/p&gt;
+
+&lt;p&gt;Pada bulan ini saya bersikeras berniat untuk melanjutkan draf-lama hingga akan menjadi tulisan atau artikel baru. Semoga semangat ini tidaklah kendur.&lt;/p&gt;
+
+&lt;p&gt;Ayo Semangat Menulis!&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Menjalankan php 5.6 dan php 7.2 dengan Apache Di MacOS</title>
+   <link href="http://localhost:4000/menjalankan-php-5-6-dan-php-7-2-dengan-apache-di-macos"/>
+   <updated>2018-11-02T16:48:52+07:00</updated>
+   <id>http://localhost:4000/menjalankan-php-5-6-dan-php-7-2-dengan-apache-di-macos</id>
+   <content type="html">&lt;p&gt;Tutorial sebelumnya saya telah menulis mengenai cara menjalankan php5.6 dan php7.2 secara bersamaan khusus untuk pengguna GNU/Linux distro Ubuntu. Sekarang giliran macOS.&lt;/p&gt;
+
+&lt;h2 id=&quot;kebutuhan&quot;&gt;Kebutuhan&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Sudah memasang brew atau homebrew (https://brew.sh/).&lt;/li&gt;
+  &lt;li&gt;Sistem Operasi macOS 10.11 (EL Capitan) atau lebih.
+Dalam praktek di sini, saya menggunakan macOS HighSierra.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;persiapan&quot;&gt;Persiapan&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Koneksi internet.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;vim dan paham dasar penggunaannya.&lt;/li&gt;
+  &lt;li&gt;Secara asali HighSierra sudah terdapat php71 dan apache mereka perlu dinonaktifkan.
+kita cukup gunakan php dan apache bawaan dari brew. Adapun caranya sebagai berikut:
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apachectl stop
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;launchctl unload &lt;span class=&quot;nt&quot;&gt;-w&lt;/span&gt; /System/Library/LaunchDaemons/org.apache.httpd.plist 2&amp;gt;/dev/null
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Buat direktori &lt;code class=&quot;highlighter-rouge&quot;&gt;Web&lt;/code&gt; dan &lt;code class=&quot;highlighter-rouge&quot;&gt;logs&lt;/code&gt; di Home kalian. Caranya:
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;mkdir&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; ~/Web/logs
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Mengetahui User dan Group yang kalian gunakan. Caranya sebagai berikut:
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-l&lt;/span&gt; ~/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;Hasilnya seperti gambar berikut:
+&lt;img src=&quot;/img/situsali-macOS-terminal-ls.png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;Terlihat hasil di atas bahwa user yang digunakan adalah &lt;code class=&quot;highlighter-rouge&quot;&gt;ali&lt;/code&gt; sedangkan group-nya adalah &lt;code class=&quot;highlighter-rouge&quot;&gt;staff&lt;/code&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;pemasangan&quot;&gt;Pemasangan&lt;/h2&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Install Arch Linux Gnome Systemd-Boot Dualboot dengan Windows 10 (Disertai Video)</title>
+   <link href="http://localhost:4000/install-arch-linux-gnome-systemd-boot-dualboot-dengan-windows-10-disertai-video"/>
+   <updated>2016-11-06T09:13:31+07:00</updated>
+   <id>http://localhost:4000/install-arch-linux-gnome-systemd-boot-dualboot-dengan-windows-10-disertai-video</id>
+   <content type="html">&lt;p&gt;Melanjuti artikel sebelumnya masih seputar tentang pemasangan Arch Linux dengan metode UEFI. Tutorial kali ini adalah kita dualboot dengan Windows 10 dan dalam Arch Linux kita tidak menggunakan Grub sebagai bootloader melainkan menggunakan systemd-boot. Meskipun seharusnya kalau dualboot itu, ya gunakan Grub tapi tidak untuk tutorial ini. Kita gunakansystemd-boot yang mana ia lebih simpel dan mudah dibandingkan Grub.&lt;/p&gt;
+
+&lt;p&gt;Tutorial ini sengaja saya tulis mengingat banyaknya pertanyaan dari teman-teman tentang bagaimana cara pemasangan Arch Linux dualboot dengan Windows 10. Ada berbagai alasan mereka dualboot pertama karena Windows mereka OEM ketika membeli suatu laptop atau PC branded. Yang kedua, karena memang mereka masih butuh Windows jadi tidak bisa singleboot hanya menggunakan GNU/Linux saja.&lt;/p&gt;
+
+&lt;p&gt;Langsung saja kita mulai praktek. Langkah-langkah sebelum memulai instalasi Arch Linux beberapa persiapan harus ada di kalian yakni:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Pastikan kalian sudah mengunduh Arch Linux. Tautan unduh Arch Linux https://www.archlinux.org/download/&lt;/li&gt;
+  &lt;li&gt;Pastikan kalian sudah membakar (burning) Arch Linux, baik menggunakan DVD ataupun flashdisk. Jika kalian ingin menggunakan flashdisk gunakan aplikasiddatau image writer&lt;/li&gt;
+  &lt;li&gt;Pastikan kalian sudah terhubung dengan internet. Ini sangat wajib, jika tidak proses instalasi Arch Linux tidak akan berjalan dengan sebagaimana mestinya.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Jika sudah langsun kalian booting Arch Linux kalian, melalui CD/DVD atau flashdisk. Begitu sudah masuk langsung ketik cfdisk:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# cfdisk&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;persiapan-partisi&quot;&gt;Persiapan Partisi&lt;/h2&gt;
+
+&lt;p&gt;Asumsi kalian memiliki storage sebesar 20 GB, kita bagi paling sedikit 2 buah partisi yang wajib kalian buat yakni partisi &lt;code class=&quot;highlighter-rouge&quot;&gt;ESP&lt;/code&gt; dan &lt;code class=&quot;highlighter-rouge&quot;&gt;Root&lt;/code&gt;. Di sini saya mencontohkan kita buat 4 buah partisi yakni &lt;code class=&quot;highlighter-rouge&quot;&gt;ESP&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;Swap&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;Root&lt;/code&gt; dan &lt;code class=&quot;highlighter-rouge&quot;&gt;Home&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Adapun skema besaran partisi yang saya siapkan adalah sebagai berikut:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;1 GB, ESP (EFI System Partition)&lt;/li&gt;
+  &lt;li&gt;2 GB, Swap&lt;/li&gt;
+  &lt;li&gt;10 GB, root&lt;/li&gt;
+  &lt;li&gt;7 GB, /home&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/install-arch-linux-gnome-systemd-boot-dualboot-dengan-windows-10-disertai-video-1.png&quot; alt=&quot;Skema Partisi&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;tahap-format&quot;&gt;Tahap Format&lt;/h2&gt;
+
+&lt;p&gt;Sekarang kita format 4 partisi tadi dengan perintah di bawah ini:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# mkfs.fat -F 32 /dev/sda5&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# mkswap /dev/sda6&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# mkfs.ext4 /dev/sda7 -L &quot;ArchLinux&quot;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# mkfs.ext4 /dev/sda8 -L &quot;Home&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Perhatian!!, jangan sampai salah pilih &lt;code class=&quot;highlighter-rouge&quot;&gt;/dev/sda&lt;/code&gt; nya.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;tahap-mount&quot;&gt;Tahap Mount&lt;/h2&gt;
+
+&lt;p&gt;Kemudian setelah di format, kita &lt;code class=&quot;highlighter-rouge&quot;&gt;mount&lt;/code&gt; semua partisi di atas dan aktifkan pula &lt;code class=&quot;highlighter-rouge&quot;&gt;swap&lt;/code&gt; -nya.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# mount /dev/sda7 /mnt&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# mkdir /mnt/{boot,home}&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# mount /dev/sda5 /mnt/boot&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# swapon /dev/sda6&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# mount /dev/sda8 /mnt/home&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;persiapan-mirror-dan-pemasangan-base&quot;&gt;Persiapan Mirror dan Pemasangan Base&lt;/h2&gt;
+
+&lt;p&gt;Setelah semua tahap &lt;code class=&quot;highlighter-rouge&quot;&gt;mount&lt;/code&gt;, langkah selanjutnya kita persiapakan &lt;code class=&quot;highlighter-rouge&quot;&gt;mirror&lt;/code&gt;. Saya sarankan gunakan &lt;code class=&quot;highlighter-rouge&quot;&gt;mirror&lt;/code&gt; lokal untuk mempercepat proses instalasi.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Update 2018&lt;/strong&gt;
+Saya biasa memakasi &lt;code class=&quot;highlighter-rouge&quot;&gt;mirror&lt;/code&gt; Singapore dan Indonesia. Kita bisa gunakan &lt;code class=&quot;highlighter-rouge&quot;&gt;reflector&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# pacman -S reflector&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# reflector --country Singapore --country Indonesia --protocol http --portocol https --sort rate --save /etc/pacman.d/mirrorlist&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Jika semua sudah, langsung kita &lt;code class=&quot;highlighter-rouge&quot;&gt;pacstrap&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# pacman -Syy&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# pacstrap /mnt base base-devel&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Tunggu sampai proses instalasi selesai, lama atau cepatnya tergantung koneksi internet kalian.&lt;/p&gt;
+
+&lt;p&gt;Jika sudah selesai, langsung kita buat &lt;code class=&quot;highlighter-rouge&quot;&gt;fstab&lt;/code&gt;, yang mana digunakan untuk &lt;code class=&quot;highlighter-rouge&quot;&gt;mount&lt;/code&gt; seluruh partisi penting diawal &lt;code class=&quot;highlighter-rouge&quot;&gt;booting&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# genfstab -L -p -P /mnt &amp;gt; /mnt/etc/fstab&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;chroot-dan-pengaturan-sistem&quot;&gt;Chroot dan Pengaturan Sistem&lt;/h2&gt;
+
+&lt;p&gt;Base dari Arch Linux sudah terpasang, langkah selanjutnya kita atur sistem Arch Linux kita, dikarenakan Arch Linux belum berjalan, kita manfaatkan chroot untuk mengatur Arch Linux tersebut, adapun perintahnya sebagai berikut:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# arch-chroot /mnt&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;pengaturan-hostname-locale-dan-zoneinfo&quot;&gt;Pengaturan Hostname, Locale dan Zoneinfo&lt;/h2&gt;
+
+&lt;h3 id=&quot;membuat-hostname&quot;&gt;Membuat hostname:&lt;/h3&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# echo &quot;Arch-Linux&quot; &amp;gt; /etc/hostname&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;pengaturan-locale&quot;&gt;Pengaturan Locale&lt;/h3&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# nano /etc/locale.gen&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Uncomment pada &lt;code class=&quot;highlighter-rouge&quot;&gt;en_US.UTF-8 UTF-8&lt;/code&gt; dan &lt;code class=&quot;highlighter-rouge&quot;&gt;id_ID.UTF-8 UTF-8&lt;/code&gt; . Kemudian kita buat berkas &lt;code class=&quot;highlighter-rouge&quot;&gt;locale.conf&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# nano /etc/locale.conf&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Dan isikan seperti berikut:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;LC_COLLATE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;C
+&lt;span class=&quot;nv&quot;&gt;LANG&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;en_US.UTF-8
+&lt;span class=&quot;nv&quot;&gt;LC_TIME&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;id_ID.UTF-8
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Jika sudah langsun kita generate &lt;code class=&quot;highlighter-rouge&quot;&gt;locale&lt;/code&gt; tersebut:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# locale-gen&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Kemudian buat symbolic link zone kita:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# ln -sf /usr/share/zoneinfo/Asia/Jakarta /usr/localtime&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;pemasangan-kebutuhan-jaringan&quot;&gt;Pemasangan Kebutuhan Jaringan&lt;/h2&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# pacman -S bash-completion&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# pacman -S ntfs-3g wpa_supplicant dialog&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;pembutan-user-dan-sudo&quot;&gt;Pembutan User dan Sudo&lt;/h2&gt;
+
+&lt;p&gt;Agar kita tidak menggunakan user root, maka perlu membuat user biasa yang dengan fungsi &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo&lt;/code&gt; agar dapat menjalakan aplikasi yang mana membutuhkan root untuk menjalankannya.&lt;/p&gt;
+
+&lt;p&gt;Pertama-tama kita buat dulu group &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# groupadd sudo&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Kemudian kita buat user dengan memasukan sebagaian dari grup sudo.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# useradd -m -U -G sudo,power,storage,audio,video Namakalian&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Jangan lupa kita sunting &lt;code class=&quot;highlighter-rouge&quot;&gt;sudoers&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# nano /etc/sudoers&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Kemdian tambahkan atau uncomment berikut:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;%sudo &lt;span class=&quot;nv&quot;&gt;ALL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=(&lt;/span&gt;ALL&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Dan yang terakhir kita buat password untuk &lt;code class=&quot;highlighter-rouge&quot;&gt;root&lt;/code&gt; dan &lt;code class=&quot;highlighter-rouge&quot;&gt;user&lt;/code&gt; yang sebelumnya telah kita buat.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# passwd Namakalian&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# passwd root&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;pembuatan-bootloader&quot;&gt;Pembuatan Bootloader&lt;/h2&gt;
+
+&lt;p&gt;Pertama-tama kita buat dulu initramfs:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# mkinitcpio -p linux&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Kemudian khusus bagi kalian pengguna prosesor Intel, pasang pula &lt;code class=&quot;highlighter-rouge&quot;&gt;intel-ucode&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# pacman -S intel-ucode&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Dan langsung kita buat &lt;code class=&quot;highlighter-rouge&quot;&gt;bootloader&lt;/code&gt; dengan &lt;code class=&quot;highlighter-rouge&quot;&gt;systemd-boot&lt;/code&gt; dengan perintah berikut:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# bootctl install&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Jangan lupa buat entri &lt;code class=&quot;highlighter-rouge&quot;&gt;systemd-boot&lt;/code&gt; kita di &lt;code class=&quot;highlighter-rouge&quot;&gt;/boot/loader/entries/&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# nano /boot/loader/entries/archlinux.conf&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Lalu isikan seperti berikut:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;title Archlinux
+linux /vmlinuz-linux
+initrd /intel-ucode.img
+initrd /initramfs-linux.img
+options &lt;span class=&quot;nv&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/dev/sdaX rw
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Pada &lt;code class=&quot;highlighter-rouge&quot;&gt;initrd /intel-ucode.img&lt;/code&gt; itu khusus bagi kalian pengguna prosesor Intel, jika buka hilangkan perintah tersebut. Kemduain pastikan &lt;code class=&quot;highlighter-rouge&quot;&gt;/dev/sdX&lt;/code&gt; kalian sudah mengetahui di mana letak partisi &lt;code class=&quot;highlighter-rouge&quot;&gt;root&lt;/code&gt; kalian, dalam contoh kasus di sini berarti di &lt;code class=&quot;highlighter-rouge&quot;&gt;/dev/sda7&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Jika sudah langsung saja ketik &lt;code class=&quot;highlighter-rouge&quot;&gt;exit&lt;/code&gt;, dan &lt;code class=&quot;highlighter-rouge&quot;&gt;reboot&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;tahap-pemasangan-gnome&quot;&gt;Tahap Pemasangan Gnome&lt;/h2&gt;
+
+&lt;p&gt;Sehabis &lt;code class=&quot;highlighter-rouge&quot;&gt;reboot&lt;/code&gt; kalian masuk Arch Linux kalian dengan &lt;code class=&quot;highlighter-rouge&quot;&gt;username&lt;/code&gt; yang telah dibuat sebelumnya. Kemudian, langkah selanjutnya, koneksikan dahulu internet kita, jika kalian pengguna &lt;code class=&quot;highlighter-rouge&quot;&gt;dhcp&lt;/code&gt; dengan kabel LAN, bisa langsung gunakan perintah berikut:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;systemctl start dhcpcd
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Jika kalian pengguna IP statis sebagai koneksi internet, dapat menggunakan dhcpcd juga atau dengan ip atau dengan systemd-network, silahkan baca: &lt;a href=&quot;https://wiki.archlinux.org/index.php/Network_configuration#dhcpcd_2&quot;&gt;https://wiki.archlinux.org/index.php/Network_configuration#dhcpcd_2&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Jika kalian menggunakan WiFi sebagai koneksi internet, kalian bisa menggunakan perintah:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;wifi-menu
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Untuk memasatikan kalian sudah terkoneksi dengan internet atau belum, gunakan ping.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ping &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; 2 google.com
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Jika sudah langsung kita pasang &lt;code class=&quot;highlighter-rouge&quot;&gt;xorg-server&lt;/code&gt; terlebih dahulu:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;pacman &lt;span class=&quot;nt&quot;&gt;-S&lt;/span&gt; xorg-server mesa mesa-demos
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Ketikan kalin tekan &lt;code class=&quot;highlighter-rouge&quot;&gt;ENTER&lt;/code&gt; maka akan keluar pilihan &lt;code class=&quot;highlighter-rouge&quot;&gt;mesa-lib&lt;/code&gt; atau &lt;code class=&quot;highlighter-rouge&quot;&gt;nvidia-lib&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Pilih &lt;code class=&quot;highlighter-rouge&quot;&gt;mesa-lib&lt;/code&gt; jika kalian pengguna Intel atau AMD, jika kalian penguna Nvidia pilih &lt;code class=&quot;highlighter-rouge&quot;&gt;nvidia-lib&lt;/code&gt;. Atau bisa juga kalian pengguna Nvidia memilih &lt;code class=&quot;highlighter-rouge&quot;&gt;mesa-lib&lt;/code&gt;, dikarenakan &lt;code class=&quot;highlighter-rouge&quot;&gt;mesa-lib&lt;/code&gt; ini mendukung hampir seluruh grafis.
+Pemasangan Driver VGA&lt;/p&gt;
+
+&lt;p&gt;Pasang driver VGA, pastikan kalian mengetahuinya. Untuk mengecek dapat menggunakan cara:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# lspci | grep VGA&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;pengguna-vga-standard&quot;&gt;Pengguna VGA Standard&lt;/h3&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;pacman &lt;span class=&quot;nt&quot;&gt;-S&lt;/span&gt; xf86-video-vesa mesa mesa-demos
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;pengguna-intel&quot;&gt;Pengguna Intel&lt;/h3&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;pacman &lt;span class=&quot;nt&quot;&gt;-S&lt;/span&gt; xf86-video-intel
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;pengguna-nvidia&quot;&gt;Pengguna Nvidia&lt;/h3&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;pacman &lt;span class=&quot;nt&quot;&gt;-S&lt;/span&gt; xf86-video-nouveau
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;pengguna-amdati&quot;&gt;Pengguna AMD/ATI&lt;/h3&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;pacman &lt;span class=&quot;nt&quot;&gt;-S&lt;/span&gt; xf86-video-ati
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;pemasangan-de&quot;&gt;Pemasangan DE&lt;/h2&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;pacman &lt;span class=&quot;nt&quot;&gt;-S&lt;/span&gt; gnome gedit firefox file-roller gnome-tweak-tool
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Kemudian kita aktifkan &lt;code class=&quot;highlighter-rouge&quot;&gt;NetworkManager&lt;/code&gt; dan &lt;code class=&quot;highlighter-rouge&quot;&gt;GDM&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;systemctl &lt;span class=&quot;nb&quot;&gt;enable &lt;/span&gt;NetworkManager
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;systemctl &lt;span class=&quot;nb&quot;&gt;enable &lt;/span&gt;gdm
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Keluar tahap instalasi dan &lt;code class=&quot;highlighter-rouge&quot;&gt;restart&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;reboot
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;video-tutorial&quot;&gt;Video Tutorial&lt;/h2&gt;
+
+&lt;p&gt;Berikut ini video tutorial praktek dari cara instalasi di atas, untuk mempermudah kalian memahami tulisan saya di atas. Video berikut ini saya mempraktekannya di Virtual Box:&lt;/p&gt;
+
+&lt;iframe width=&quot;640&quot; height=&quot;360&quot; src=&quot;https://www.youtube.com/embed/LV5u4FkiVXM&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Memperbaiki Grub Yang Tertimpa Setelah Install Windows</title>
+   <link href="http://localhost:4000/memperbaiki-grub-yg-tertimpa-setelah-install-windows"/>
+   <updated>2014-01-17T04:50:54+07:00</updated>
+   <id>http://localhost:4000/memperbaiki-grub-yg-tertimpa-setelah-install-windows</id>
+   <content type="html">&lt;h2 id=&quot;latar-belakang&quot;&gt;Latar Belakang&lt;/h2&gt;
+
+&lt;p&gt;Kalian masih suka dengan Windows? Sulit meninggalkan Windows karena ada software atau game kesukaan kalian tidak kompatibel dengan GNU/Linux? Ya tentu saja dengan dualboot menjadikan sebuah alternatif terbaik bagi mereka yang sulit meninggalkan Windows atau memang karena tuntutan pekerjaan sehingga mau-mau tidak mau harus memakai Windows.&lt;/p&gt;
+
+&lt;p&gt;Saya sendiri termasuk pengguna GNU/Linux dan Windows (dualboot), tapi saya bekerja lebih sering menggunakan GNU/Linux daripada Windows, malah Windows itu jarang sekali dipakai, saya pakai Windows cuma untuk menggunakan software Microsoft Office 2013 saja, meskipun hanya untuk keperluan kantor.&lt;/p&gt;
+
+&lt;p&gt;Ok kembali ke judul artikel ini, melihat situasi dari teman-teman saya yang dualboot sering kali terjadi Grub nya tertipa karena sehabis Install Windows atau juga Grubnya tidak terinstall sehabis Install GNU/Linux.&lt;/p&gt;
+
+&lt;p&gt;Pada Artikel kali ini yang saya bahas GNU/Linux itu berarti menyangkut hampir semua distro GNU/Linux baik itu Ubuntu, LinuxMint, Fedora, Arch Linux, dlll. Jadi istilahnya secara universal 😀&lt;/p&gt;
+
+&lt;h2 id=&quot;persiapan&quot;&gt;Persiapan&lt;/h2&gt;
+&lt;p&gt;Langsung saja kita praktek, sebelum praktek yang perlu kalian siapkan adalah Live OS terserah mau distro apa, apakah Ubuntu, Arch Linux, Fedora, dll. Tapi saya menyarankan menggunakan LiveOS Arch Linux mengapa? &lt;del&gt;karena alasan klasik Arch Linux ISO nya sudah merangkap 32bit dan 64bit sehingga memudahkan jika menggunakan atau menginstall salah satu GNU/Linux itu baik 32bit atau 64bit.&lt;/del&gt; Saat ini hampir semua distro tidak lagi mendukung 32bit, jadi kalian bisa gunakan distro lawas.&lt;/p&gt;
+
+&lt;h2 id=&quot;mount-partisi&quot;&gt;Mount Partisi&lt;/h2&gt;
+
+&lt;p&gt;Setelah itu, boot PC/Laptop kalian menggunakan LiveOS baik secara CD/DVD ataupun USB Flashdisk yang bisa kalian buat dengan &lt;a href=&quot;https://rufus.ie&quot;&gt;Rufus&lt;/a&gt;. Kemudian setelah masuk Live pertama-tama &lt;code class=&quot;highlighter-rouge&quot;&gt;mount&lt;/code&gt; dulu GNU/Linux kalian.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;mount /dev/sdX /mnt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Untuk &lt;code class=&quot;highlighter-rouge&quot;&gt;X&lt;/code&gt; pada kata &lt;code class=&quot;highlighter-rouge&quot;&gt;sdX&lt;/code&gt; di atas, mengidentifikasikan nomor partisi kalian. Oleh karenaitu, kalian harus tahu dimana letak partisi Linux kalian, jika kalian tidak tau atau lupa kalian bisa lihat dengan fdisk, caranya:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;fdisk &lt;span class=&quot;nt&quot;&gt;-l&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Lihat gambar di bawah ini
+&lt;img src=&quot;/img/memperbaiki-grub-yg-tertimpa-setelah-install-windows-1.png&quot; alt=&quot;fdisk -l&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Jika dilihat dari gambar, GNU/Linux terletak pada &lt;code class=&quot;highlighter-rouge&quot;&gt;sda1&lt;/code&gt;. Nah, kita bisa langsung &lt;code class=&quot;highlighter-rouge&quot;&gt;mount&lt;/code&gt; dengan cara berikut:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;mount /dev/sda1 /mnt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h2 id=&quot;install-grub&quot;&gt;Install Grub&lt;/h2&gt;
+
+&lt;p&gt;Langkah selanjutnya kita install &lt;code class=&quot;highlighter-rouge&quot;&gt;grub&lt;/code&gt; dengan perintah di bawah ini.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Perlu diperhatikan bahwa perintah di bawah hanya berlaku bagi kalian yang menggunakan legacy boot bukan mode UEFI&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;distro-pada-umumnya&quot;&gt;Distro Pada Umumnya&lt;/h3&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;grub-install /dev/sda &lt;span class=&quot;nt&quot;&gt;--root-directory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/mnt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;khusus-fedora-dan-turunannya&quot;&gt;Khusus Fedora dan turunannya&lt;/h3&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;grub2-install /dev/sda &lt;span class=&quot;nt&quot;&gt;--root-directory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/mnt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Konsep dasar OOP di PHP</title>
+   <link href="http://localhost:4000/konsep-dasar-oop-php"/>
+   <updated>2014-01-02T09:13:31+07:00</updated>
+   <id>http://localhost:4000/konsep-dasar-oop-php</id>
+   <content type="html">&lt;h2 id=&quot;introduksi&quot;&gt;Introduksi&lt;/h2&gt;
+
+&lt;p&gt;PHP merupakan bahasa pemrograman yang cukup banyak digunakan untuk membuat web dinamis. Seiring perjalanan waktu PHP terus dikembangkan dan PHP sejak versi PHP 5 telah mendukung Object Oriented Programming atau OOP secara penuh.&lt;/p&gt;
+
+&lt;p&gt;Di PHP Object di sini didefinisikan dalam sebuah class. Kemudian Properti object didefinisikan menggunakan kata yang tersisipi var. Sedangkan method dari object berbentuk sebuah function.&lt;/p&gt;
+
+&lt;h2 id=&quot;class-dan-object&quot;&gt;Class dan Object&lt;/h2&gt;
+
+&lt;p&gt;Class merupakan struktur dasar atau sebuah kerangka yang digunakan untuk membentuk sebuah object. Sedangakan Object adalah instance dari class-nya, dengan demikian object itu bisa dikatakan data yang telah terstruktur sesuai dengan yang didefinisikan dalam sebuah class. Jadi di PHP jika kalian ingin membuat object, maka harus mendefinisikan kata class kemudian nama class-nya dibuka dan ditutup menggunakan kurung kurawal &lt;code class=&quot;highlighter-rouge&quot;&gt;{}&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Contoh:&lt;/p&gt;
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Makanan&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Lalu object diimplementasikan dengan variabel dan dikuti kata &lt;code class=&quot;highlighter-rouge&quot;&gt;new&lt;/code&gt; kemudian nama class-nya.&lt;/p&gt;
+
+&lt;p&gt;&amp;lt;?php&lt;/p&gt;
+
+&lt;p&gt;class Makanan {
+}&lt;/p&gt;
+
+&lt;p&gt;$makanan = new Makanan;&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Reset Password Root Di GNU/Linux</title>
+   <link href="http://localhost:4000/reset-password-root-di-linux"/>
+   <updated>2013-10-01T04:50:54+07:00</updated>
+   <id>http://localhost:4000/reset-password-root-di-linux</id>
+   <content type="html">&lt;h2 id=&quot;introduksi&quot;&gt;Introduksi&lt;/h2&gt;
+
+&lt;p&gt;Kadang karena sibuk, membuat hal terkecil lupa seperti halnya dengan password, baik password email, facebook, forum atau password OS kita sendiri juga ikut lupa 😄, Ya wajar-wajar saja, mungkin karena kebanyakan password. Saya sendiri pun pernah mengalami lupa password. Kalau, password email atapun sosmed lupa, kita bisa manfaatkan fitur &lt;code class=&quot;highlighter-rouge&quot;&gt;forgot password&lt;/code&gt;, bagaimana jika password sistem operasi kita?&lt;/p&gt;
+
+&lt;p&gt;Kali ini saya ingin membagikan sedikit tips, menganai bagaimana cara me-reset password &lt;code class=&quot;highlighter-rouge&quot;&gt;root&lt;/code&gt; di GNU/Linux.&lt;/p&gt;
+
+&lt;h2 id=&quot;persyaratan&quot;&gt;Persyaratan&lt;/h2&gt;
+
+&lt;p&gt;Sebelum memasuki tahap praktek ada kiranya beberapa persyaratan yang harus kalian persiapkan.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Sudah membuat GNU/Linux USB/CD bootable. Bebas menggunakan distro apapun. Saran saya gunakan distro yang sudah familiar. Kalau contoh di sini saya menggunakan Arch Linux.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Pastikan partisi kalian tidak terenkripsi. Jika memang sudah terenkrip, mohon maaf kalian tidak bisa lanjut. Mungkin nanti akan saya buatkan mengenai hal ini. Tapi tidak janji 😄.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;proses-reset-password&quot;&gt;Proses Reset Password&lt;/h2&gt;
+
+&lt;p&gt;Jika syarat di atas sudah terpenuhi, mari langsung praktek.&lt;/p&gt;
+
+&lt;p&gt;Pertama-tama kalian booting dulu ke GNU/Linux USB atau CD. Selanjutnya. Kalian &lt;code class=&quot;highlighter-rouge&quot;&gt;mount&lt;/code&gt;. Perintahnya sebagai berikut:&lt;/p&gt;
+
+&lt;h3 id=&quot;mount-drive&quot;&gt;Mount Drive&lt;/h3&gt;
+
+&lt;p&gt;Cek di mana GNU/Linux kalian dipasang.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;fdisk &lt;span class=&quot;nt&quot;&gt;-l&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;atau gunakan &lt;code class=&quot;highlighter-rouge&quot;&gt;lsblk&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;lsblk
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Jika sudah ketemu, langsung saja kalian &lt;code class=&quot;highlighter-rouge&quot;&gt;mount&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;mount /dev/sdX /mnt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Ingat tanda &lt;code class=&quot;highlighter-rouge&quot;&gt;X&lt;/code&gt; dari &lt;code class=&quot;highlighter-rouge&quot;&gt;sdX&lt;/code&gt; di atas yakni nomor urut partisi GNU/Linux kalian dari hasil &lt;code class=&quot;highlighter-rouge&quot;&gt;lsblk&lt;/code&gt; atau &lt;code class=&quot;highlighter-rouge&quot;&gt;fdisk&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;chroot&quot;&gt;Chroot&lt;/h3&gt;
+
+&lt;p&gt;Jika root dari partisi kalian sudah di &lt;code class=&quot;highlighter-rouge&quot;&gt;mount&lt;/code&gt; langsung lakulan perintah &lt;code class=&quot;highlighter-rouge&quot;&gt;chroot&lt;/code&gt; seperti berikut:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo chroot&lt;/span&gt; /mnt /bin/bash
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Jika berhasil kalian akan langsung masuk dalam mode root.&lt;/p&gt;
+
+&lt;h3 id=&quot;ganti-password&quot;&gt;Ganti Password&lt;/h3&gt;
+
+&lt;p&gt;Nah, langkah selanjutnya kita bisa gunakan perintah &lt;code class=&quot;highlighter-rouge&quot;&gt;passwd&lt;/code&gt; untuk membuat password baru:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# passwd&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Tulis password baru kalian.&lt;/p&gt;
+
+&lt;h2 id=&quot;kesimpulan&quot;&gt;Kesimpulan&lt;/h2&gt;
+
+&lt;p&gt;Pengguna GNU/Linux jika kalian lupa password root kalian. Sebetulnya bisa langsung diakali dengan &lt;code class=&quot;highlighter-rouge&quot;&gt;user&lt;/code&gt; biasa yang diberikan akses &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo&lt;/code&gt; namun, jika memang tidak bisa baru kalian melakukan metode &lt;code class=&quot;highlighter-rouge&quot;&gt;chroot&lt;/code&gt;. Caranya pun sangat mudah, cukup boot melalui Live USB/CD dengan syarat partisi kalian tidak terenkripsi.&lt;/p&gt;
+
+&lt;p&gt;Semoga bermanfaat 😉&lt;/p&gt;
+
 </content>
  </entry>
  

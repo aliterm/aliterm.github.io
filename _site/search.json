@@ -9,6 +9,204 @@
       "date"     : "2020-04-03 14:47:00 +0700",
       "discription" : ""
 
+    } ,
+  
+    {
+
+      "title"    : "Migrasi ke Jekyll",
+      "url"      : "/migrasi-ke-jekyll",
+      "category" : "",
+      "tags"     : "",
+      "date"     : "2020-04-03 09:13:31 +0700",
+      "discription" : ""
+
+    } ,
+  
+    {
+
+      "title"    : "Cara Memasang Ruby On Rails di Arch Linux Based",
+      "url"      : "/cara-memasang-ruby-on-rails-di-arch-linux-based",
+      "category" : "",
+      "tags"     : "ruby, gnulinux, archlinux",
+      "date"     : "2019-06-20 09:13:31 +0700",
+      "discription" : ""
+
+    } ,
+  
+    {
+
+      "title"    : "Membatasi Waktu Sinkronisasi Metadata Di Dnf Fedora",
+      "url"      : "/membatasi-waktu-sinkronisasi-metadata-di-dnf-fedora",
+      "category" : "linux",
+      "tags"     : "fedora, gnulinux",
+      "date"     : "2019-04-21 21:51:01 +0700",
+      "discription" : ""
+
+    } ,
+  
+    {
+
+      "title"    : "Yang Saya Lakukan Setelah Memasang Fedora 29",
+      "url"      : "/yang-saya-lakukan-setelah-memasang-fedora-29",
+      "category" : "linux",
+      "tags"     : "fedora, gnulinux",
+      "date"     : "2019-04-20 22:20:30 +0700",
+      "discription" : ""
+
+    } ,
+  
+    {
+
+      "title"    : "Murottal 30 Juz Abdullah Al Matrud",
+      "url"      : "/murottal-30-juz-abdullah-al-matrud",
+      "category" : "islam",
+      "tags"     : "almatrood, islam, murottal",
+      "date"     : "2019-02-23 21:18:07 +0700",
+      "discription" : ""
+
+    } ,
+  
+    {
+
+      "title"    : "Memperbaiki Grub GNU/Linux Dengan Chroot",
+      "url"      : "/memperbaiki-grub-gnu-linux-dengan-chroot",
+      "category" : "linux",
+      "tags"     : "gnulinux, chroot",
+      "date"     : "2019-02-09 21:25:00 +0700",
+      "discription" : ""
+
+    } ,
+  
+    {
+
+      "title"    : "Mudah Migrasi Wordpress",
+      "url"      : "/mudah-migrasi-wordpress",
+      "category" : "pemrograman",
+      "tags"     : "wordpress, migrasi",
+      "date"     : "2019-02-06 21:33:52 +0700",
+      "discription" : ""
+
+    } ,
+  
+    {
+
+      "title"    : "Teks Arab Sholawat Dustur",
+      "url"      : "/teks-arab-sholawat-dustur",
+      "category" : "islam",
+      "tags"     : "sholawat, dustur, islam",
+      "date"     : "2019-02-04 21:42:35 +0700",
+      "discription" : ""
+
+    } ,
+  
+    {
+
+      "title"    : "Meluringkan Situs Dengan Wget",
+      "url"      : "/meluringkan-situs-dengan-wget",
+      "category" : "linux",
+      "tags"     : "wget, gnulinux",
+      "date"     : "2019-02-03 21:27:17 +0700",
+      "discription" : ""
+
+    } ,
+  
+    {
+
+      "title"    : "Cek Kapasitas Penyimpanan Di GNU/Linux",
+      "url"      : "/cek-kapasitas-penyimpanan-di-gnu-linux",
+      "category" : "linux",
+      "tags"     : "gnulinux, storage, cli",
+      "date"     : "2019-02-02 21:31:03 +0700",
+      "discription" : ""
+
+    } ,
+  
+    {
+
+      "title"    : "Cara Memindahkan Multi Kategori Menjadi Satu Di Wordpress",
+      "url"      : "/cara-memindahkan-multi-kategori-menjadi-satu-di-wordpress",
+      "category" : "pemrograman",
+      "tags"     : "wordpress, plugin",
+      "date"     : "2019-01-31 21:34:26 +0700",
+      "discription" : ""
+
+    } ,
+  
+    {
+
+      "title"    : "Pemangkasan Kategori",
+      "url"      : "/pemangkasan-kategori",
+      "category" : "pengumuman",
+      "tags"     : "situsali, informasi",
+      "date"     : "2019-01-30 22:48:28 +0700",
+      "discription" : ""
+
+    } ,
+  
+    {
+
+      "title"    : "Mogok Menulis",
+      "url"      : "/mogok-menulis",
+      "category" : "pengumuman",
+      "tags"     : "situsali, informasi",
+      "date"     : "2019-01-30 21:50:17 +0700",
+      "discription" : ""
+
+    } ,
+  
+    {
+
+      "title"    : "Menjalankan php 5.6 dan php 7.2 dengan Apache Di MacOS",
+      "url"      : "/menjalankan-php-5-6-dan-php-7-2-dengan-apache-di-macos",
+      "category" : "system-tools",
+      "tags"     : "apache, php, macos",
+      "date"     : "2018-11-02 16:48:52 +0700",
+      "discription" : ""
+
+    } ,
+  
+    {
+
+      "title"    : "Install Arch Linux Gnome Systemd-Boot Dualboot dengan Windows 10 (Disertai Video)",
+      "url"      : "/install-arch-linux-gnome-systemd-boot-dualboot-dengan-windows-10-disertai-video",
+      "category" : "",
+      "tags"     : "linux, archlinux",
+      "date"     : "2016-11-06 09:13:31 +0700",
+      "discription" : ""
+
+    } ,
+  
+    {
+
+      "title"    : "Memperbaiki Grub Yang Tertimpa Setelah Install Windows",
+      "url"      : "/memperbaiki-grub-yg-tertimpa-setelah-install-windows",
+      "category" : "",
+      "tags"     : "gnu/linux, grub, bootloader",
+      "date"     : "2014-01-17 04:50:54 +0700",
+      "discription" : ""
+
+    } ,
+  
+    {
+
+      "title"    : "Konsep dasar OOP di PHP",
+      "url"      : "/konsep-dasar-oop-php",
+      "category" : "",
+      "tags"     : "php, oop",
+      "date"     : "2014-01-02 09:13:31 +0700",
+      "discription" : ""
+
+    } ,
+  
+    {
+
+      "title"    : "Reset Password Root Di GNU/Linux",
+      "url"      : "/reset-password-root-di-linux",
+      "category" : "",
+      "tags"     : "gnu/linux, chroot",
+      "date"     : "2013-10-01 04:50:54 +0700",
+      "discription" : ""
+
     } 
   
 ]
