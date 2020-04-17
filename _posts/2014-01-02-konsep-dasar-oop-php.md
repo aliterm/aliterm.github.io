@@ -16,6 +16,7 @@ Di PHP Object di sini didefinisikan dalam sebuah class. Kemudian Properti object
 Class merupakan struktur dasar atau sebuah kerangka yang digunakan untuk membentuk sebuah object. Sedangakan Object adalah instance dari class-nya, dengan demikian object itu bisa dikatakan data yang telah terstruktur sesuai dengan yang didefinisikan dalam sebuah class. Jadi di PHP jika kalian ingin membuat object, maka harus mendefinisikan kata class kemudian nama class-nya dibuka dan ditutup menggunakan kurung kurawal `{}`.
 
 Contoh:
+
 ```php
 <?php
 
@@ -24,11 +25,11 @@ class Makanan {
 ```
 Lalu object diimplementasikan dengan variabel dan dikuti kata `new` kemudian nama class-nya.
 
-{{< highlight php "hl_lines=5" >}}
+```php
 <?php
 
 class Makanan {
 }
 
 $makanan = new Makanan;
-{{< / highlight >}}
+```

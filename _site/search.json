@@ -2,6 +2,17 @@
   
     {
 
+      "title"    : "ViM Adalah Text Editorku",
+      "url"      : "/vim-adalah-text-editorku",
+      "category" : "vim",
+      "tags"     : "",
+      "date"     : "2020-04-17 10:31:00 +0700",
+      "discription" : ""
+
+    } ,
+  
+    {
+
       "title"    : "Migrasi dari WP ke Jekyll",
       "url"      : "/migrasi-dari-wp-ke-jekyll",
       "category" : "",

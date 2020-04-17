@@ -1,16 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
- <title>RubyHolic</title>
+ <title>Situs Ali</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2020-04-03T17:58:02+07:00</updated>
+ <updated>2020-04-17T14:43:02+07:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Ali</name>
    <email>me@situsali.id</email>
  </author>
 
+ 
+ <entry>
+   <title>ViM Adalah Text Editorku</title>
+   <link href="http://localhost:4000/vim-adalah-text-editorku"/>
+   <updated>2020-04-17T10:31:00+07:00</updated>
+   <id>http://localhost:4000/vim-adalah-text-editorku</id>
+   <content type="html">&lt;p&gt;Saya tidak ingat secara pasti kapan saya mulai belajar ViM. Seingat saya sekitar tanggal 20 Oktober 2015, baru mulai belajar dan langsung diajari oleh teman saya di Telegram bernama Eka Maeman Sutisna.&lt;/p&gt;
+
+&lt;h2 id=&quot;pada-awalnya-&quot;&gt;Pada Awalnya …&lt;/h2&gt;
+
+&lt;p&gt;Awalnya saya sangat enggan belajar ViM. Dikerenakan pertama saya sudah nyaman dengan Sublime; Kedua, karena ViM itu susah; Dan yang ketiga, karena spesifikasi komputer yang saya pergunakan terbilang sudah cukup okay buat ngejalanin aplikasi berat sekalipun.&lt;/p&gt;
+
+&lt;p&gt;Tekad saya belajar ViM karena penasaran saja dengan teman-teman pengguna GNU/Linux. Kenapa mereka begitu nyaman dengan ViM. Apalagi semua teman yang menggunakan ViM, pasti dipakai buat &lt;em&gt;ngoding&lt;/em&gt;. Bikin tambah penasaran, &lt;em&gt;“kok bisa ya ngoding pake text editor berbasis CLI”&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;salah-diawal&quot;&gt;Salah Diawal&lt;/h2&gt;
+
+&lt;p&gt;Perlu kalian ketahui bahwa pertama kali saya belajar ViM sudah salah. Loh kenapa dibilang salah? Karena saya hanya ingin tahu. Kenapa ViM bisa menampilkan colorscheme untuk syntax bahasa pemrograman? Dan ada autocomplate-nya? Yang sepengetahuan saya, itu hanya bisa dilakukan oleh IDE, atau text editor tertentu, seperti Sublime.&lt;/p&gt;
+
+&lt;p&gt;Pada saat itu saya hanya belajar mengenai plugin dari ViM. Bukan belajar dasar dari ViM. Seperti bagaimana caranya bernavigasi di ViM dengan efisien. Yang saya perlajari hanyalah yang penting bisa nulis di ViM. Pencet &lt;code class=&quot;highlighter-rouge&quot;&gt;i&lt;/code&gt; lalu tulis, navigasi pakai &lt;code class=&quot;highlighter-rouge&quot;&gt;arrow&lt;/code&gt; dan fitur mouse diaktifkan buat &lt;em&gt;ngeblok text&lt;/em&gt;. Ya serupa dengan teks editor lainnnya.&lt;/p&gt;
+
+&lt;p&gt;Mengapa belajar seperti saya itu dikatakan belum benar? Karena kalau cuma bisa nulis dan bisa pasang plugin, kita tidak akan pernah mengetahui kehebatan dari ViM. Dan biasanya belajar seperti di atas akan menimbukan kebosanan dan pasti akan balik lagi ke text editor atau IDE sebelumnya.&lt;/p&gt;
+
+&lt;p&gt;Yang saya alami demikian, saya belajar ViM hanya sekitar 2-3 minggu. Dan akhirnya balik ke Sublime. Apalagi pada saat itu ada IDE bagus seperti Atom dan VSCode. Saya makin betah di sana. Hehehe&lt;/p&gt;
+
+&lt;h2 id=&quot;2017-mulai-serius-belajar&quot;&gt;2017 Mulai Serius Belajar&lt;/h2&gt;
+
+&lt;p&gt;Sekitar 15 Agustus 2017 saya mulai belajar ViM lagi. Kali ini dengan niat yang sungguh-sungguh, karena saya belajar bermodalkan membeli buku. Jadi kalau uang sudah keluar pasti saya akan serius, beda kalau belajar modal gratisan, pasti nantinya akan jadi males-malesan belajarnya wkwkwkw.&lt;/p&gt;
+
+&lt;p&gt;Buku yang saya beli adalah bukunya Mas Agung Setiawan berjudul &lt;a href=&quot;https://agung-setiawan.com/bukuvim/&quot;&gt;ViM Untuk Semua&lt;/a&gt;. Dibuku itu diajarkan secara urutan, dari mulai pengenalan mode, navigasi sampai tahap konfigurasi. Nah, kalau dilihat dari daftar isi buku itu. Bisa disimpulkan bahwa saya belajar dari belakang buka dari depannya, hahaha. Makanya saya bilang saya salah langkah dalam belajar.&lt;/p&gt;
+
+&lt;h2 id=&quot;setelah-3-bulan-belajar-&quot;&gt;Setelah 3 Bulan Belajar …&lt;/h2&gt;
+
+&lt;p&gt;Di awal November saya resign dari kantor lama, kemudian join ke MNC Group sebagai web developer. Saat interview test, saya dengan pedenya ngoding dengan ViM. Padahal kemampuan saya pakai ViM masih terbilang biasa saja belum semahir teman-teman lainnya 😣&lt;/p&gt;
+
+&lt;p&gt;Hingga akhirnya, Alhamdulillah saya lolos test. Dan diterima berkerja di sana. Namun, setelah bekerja di sana saya balik lagi tidak pakai ViM, melainkan pakai VSCode kenapa? Karena kebetulan di sana menggunakan OS Windows. Bisa sih di Windows pakai ViM tapi agak beda fellnya dengan GNU/Linux atau macOS.&lt;/p&gt;
+
+&lt;p&gt;Setelah 9 bulan bekerja di sana, laptop saya diganti MBP yeah..! 💪 Nah, barulah pakai ViM lagi di MBP. Sampai saya resign lagi dan join ke BBM (KMK Online) / sekarang Vidio.&lt;/p&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>Migrasi dari WP ke Jekyll</title>
@@ -1109,6 +1149,7 @@ Pemasangan Driver VGA&lt;/p&gt;
 &lt;p&gt;Class merupakan struktur dasar atau sebuah kerangka yang digunakan untuk membentuk sebuah object. Sedangakan Object adalah instance dari class-nya, dengan demikian object itu bisa dikatakan data yang telah terstruktur sesuai dengan yang didefinisikan dalam sebuah class. Jadi di PHP jika kalian ingin membuat object, maka harus mendefinisikan kata class kemudian nama class-nya dibuka dan ditutup menggunakan kurung kurawal &lt;code class=&quot;highlighter-rouge&quot;&gt;{}&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Contoh:&lt;/p&gt;
+
 &lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
 
 &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Makanan&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
@@ -1116,13 +1157,13 @@ Pemasangan Driver VGA&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;Lalu object diimplementasikan dengan variabel dan dikuti kata &lt;code class=&quot;highlighter-rouge&quot;&gt;new&lt;/code&gt; kemudian nama class-nya.&lt;/p&gt;
 
-&lt;p&gt;&amp;lt;?php&lt;/p&gt;
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
 
-&lt;p&gt;class Makanan {
-}&lt;/p&gt;
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Makanan&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
-&lt;p&gt;$makanan = new Makanan;&lt;/p&gt;
-
+&lt;span class=&quot;nv&quot;&gt;$makanan&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Makanan&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </content>
  </entry>
  
